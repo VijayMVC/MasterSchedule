@@ -1,0 +1,16 @@
+﻿//SOCK LINING 9
+            RawMaterialModel sockLining = rawMaterialList.Where(r => r.ProductNo == orders.ProductNo && r.MaterialTypeId == 9).OrderBy(r => r.ModifiedTime).LastOrDefault();
+            if (sockLining != null)
+            {
+                rawMaterialView.SOCKLINING_ETD = String.Format("{0:dd-MMM}", sockLining.ETD);
+                if (sockLining.ETD.Date == new DateTime(2000, 1, 1))
+                {
+                    rawMaterialView.SOCKLINING_ETD = "";
+                }
+                rawMaterialView.SOCKLINING_ActualDate = String.Format("{0:dd-MMM}", sockLining.ActualDate);
+                if (sockLining.ActualDate.Date == new DateTime(2000, 1, 1))
+                {
+                    rawMaterialView.SOCKLINING_ActualDate = "";
+                }
+                rawMaterialView.SOCKLINING_Remarks = sockLining.Remarks;
+            }

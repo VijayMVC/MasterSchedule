@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OutsoleMasterDataSet" targetNamespace="http://tempuri.org/OutsoleMasterDataSet.xsd" xmlns:mstns="http://tempuri.org/OutsoleMasterDataSet.xsd" xmlns="http://tempuri.org/OutsoleMasterDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OutsoleMasterDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OutsoleMasterDataSet" msprop:Generator_UserDSName="OutsoleMasterDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutsoleMasterTable" msprop:Generator_TableClassName="OutsoleMasterTableDataTable" msprop:Generator_TableVarName="tableOutsoleMasterTable" msprop:Generator_RowChangedName="OutsoleMasterTableRowChanged" msprop:Generator_TablePropName="OutsoleMasterTable" msprop:Generator_RowDeletingName="OutsoleMasterTableRowDeleting" msprop:Generator_RowChangingName="OutsoleMasterTableRowChanging" msprop:Generator_RowEvHandlerName="OutsoleMasterTableRowChangeEventHandler" msprop:Generator_RowDeletedName="OutsoleMasterTableRowDeleted" msprop:Generator_RowClassName="OutsoleMasterTableRow" msprop:Generator_UserTableName="OutsoleMasterTable" msprop:Generator_RowEvArgName="OutsoleMasterTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sequence" msprop:Generator_ColumnVarNameInTable="columnSequence" msprop:Generator_ColumnPropNameInRow="Sequence" msprop:Generator_ColumnPropNameInTable="SequenceColumn" msprop:Generator_UserColumnName="Sequence" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductNo" msprop:Generator_ColumnVarNameInTable="columnProductNo" msprop:Generator_ColumnPropNameInRow="ProductNo" msprop:Generator_ColumnPropNameInTable="ProductNoColumn" msprop:Generator_UserColumnName="ProductNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country" type="xs:string" minOccurs="0" />
+              <xs:element name="ShoeName" msprop:Generator_ColumnVarNameInTable="columnShoeName" msprop:Generator_ColumnPropNameInRow="ShoeName" msprop:Generator_ColumnPropNameInTable="ShoeNameColumn" msprop:Generator_UserColumnName="ShoeName" type="xs:string" minOccurs="0" />
+              <xs:element name="ArticleNo" msprop:Generator_ColumnVarNameInTable="columnArticleNo" msprop:Generator_ColumnPropNameInRow="ArticleNo" msprop:Generator_ColumnPropNameInTable="ArticleNoColumn" msprop:Generator_UserColumnName="ArticleNo" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleCode" msprop:Generator_ColumnVarNameInTable="columnOutsoleCode" msprop:Generator_ColumnPropNameInRow="OutsoleCode" msprop:Generator_ColumnPropNameInTable="OutsoleCodeColumn" msprop:Generator_UserColumnName="OutsoleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="ETD" msprop:Generator_ColumnVarNameInTable="columnETD" msprop:Generator_ColumnPropNameInRow="ETD" msprop:Generator_ColumnPropNameInTable="ETDColumn" msprop:Generator_UserColumnName="ETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OutsoleLine" msprop:Generator_ColumnVarNameInTable="columnOutsoleLine" msprop:Generator_ColumnPropNameInRow="OutsoleLine" msprop:Generator_ColumnPropNameInTable="OutsoleLineColumn" msprop:Generator_UserColumnName="OutsoleLine" type="xs:string" minOccurs="0" />
+              <xs:element name="SewingStartDate" msprop:Generator_ColumnVarNameInTable="columnSewingStartDate" msprop:Generator_ColumnPropNameInRow="SewingStartDate" msprop:Generator_ColumnPropNameInTable="SewingStartDateColumn" msprop:Generator_UserColumnName="SewingStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SewingFinishDate" msprop:Generator_ColumnVarNameInTable="columnSewingFinishDate" msprop:Generator_ColumnPropNameInRow="SewingFinishDate" msprop:Generator_ColumnPropNameInTable="SewingFinishDateColumn" msprop:Generator_UserColumnName="SewingFinishDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OutsoleMatsArrival" msprop:Generator_ColumnVarNameInTable="columnOutsoleMatsArrival" msprop:Generator_ColumnPropNameInRow="OutsoleMatsArrival" msprop:Generator_ColumnPropNameInTable="OutsoleMatsArrivalColumn" msprop:Generator_UserColumnName="OutsoleMatsArrival" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleWHBalance" msprop:Generator_ColumnVarNameInTable="columnOutsoleWHBalance" msprop:Generator_ColumnPropNameInRow="OutsoleWHBalance" msprop:Generator_ColumnPropNameInTable="OutsoleWHBalanceColumn" msprop:Generator_UserColumnName="OutsoleWHBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleStartDate" msprop:Generator_ColumnVarNameInTable="columnOutsoleStartDate" msprop:Generator_ColumnPropNameInRow="OutsoleStartDate" msprop:Generator_ColumnPropNameInTable="OutsoleStartDateColumn" msprop:Generator_UserColumnName="OutsoleStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OutsoleFinishDate" msprop:Generator_ColumnVarNameInTable="columnOutsoleFinishDate" msprop:Generator_ColumnPropNameInRow="OutsoleFinishDate" msprop:Generator_ColumnPropNameInTable="OutsoleFinishDateColumn" msprop:Generator_UserColumnName="OutsoleFinishDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SewingQuota" msprop:Generator_ColumnVarNameInTable="columnSewingQuota" msprop:Generator_ColumnPropNameInRow="SewingQuota" msprop:Generator_ColumnPropNameInTable="SewingQuotaColumn" msprop:Generator_UserColumnName="SewingQuota" type="xs:int" minOccurs="0" />
+              <xs:element name="OutsoleQuota" msprop:Generator_ColumnVarNameInTable="columnOutsoleQuota" msprop:Generator_ColumnPropNameInRow="OutsoleQuota" msprop:Generator_ColumnPropNameInTable="OutsoleQuotaColumn" msprop:Generator_UserColumnName="OutsoleQuota" type="xs:int" minOccurs="0" />
+              <xs:element name="SewingBalance" msprop:Generator_ColumnVarNameInTable="columnSewingBalance" msprop:Generator_ColumnPropNameInRow="SewingBalance" msprop:Generator_ColumnPropNameInTable="SewingBalanceColumn" msprop:Generator_UserColumnName="SewingBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleBalance" msprop:Generator_ColumnVarNameInTable="columnOutsoleBalance" msprop:Generator_ColumnPropNameInRow="OutsoleBalance" msprop:Generator_ColumnPropNameInTable="OutsoleBalanceColumn" msprop:Generator_UserColumnName="OutsoleBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="ReleasedQuantity" msprop:Generator_ColumnVarNameInTable="columnReleasedQuantity" msprop:Generator_ColumnPropNameInRow="ReleasedQuantity" msprop:Generator_ColumnPropNameInTable="ReleasedQuantityColumn" msprop:Generator_UserColumnName="ReleasedQuantity" type="xs:string" minOccurs="0" />
+              <xs:element name="IsOutsoleMatsArrivalOk" msprop:Generator_ColumnVarNameInTable="columnIsOutsoleMatsArrivalOk" msprop:Generator_ColumnPropNameInRow="IsOutsoleMatsArrivalOk" msprop:Generator_ColumnPropNameInTable="IsOutsoleMatsArrivalOkColumn" msprop:Generator_UserColumnName="IsOutsoleMatsArrivalOk" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsHaveMemo" msprop:Generator_ColumnVarNameInTable="columnIsHaveMemo" msprop:Generator_ColumnPropNameInRow="IsHaveMemo" msprop:Generator_ColumnPropNameInTable="IsHaveMemoColumn" msprop:Generator_UserColumnName="IsHaveMemo" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

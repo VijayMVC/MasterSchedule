@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutsoleInventoryDetailTable" msprop:Generator_TableClassName="OutsoleInventoryDetailTableDataTable" msprop:Generator_TableVarName="tableOutsoleInventoryDetailTable" msprop:Generator_TablePropName="OutsoleInventoryDetailTable" msprop:Generator_RowDeletingName="OutsoleInventoryDetailTableRowDeleting" msprop:Generator_RowChangingName="OutsoleInventoryDetailTableRowChanging" msprop:Generator_RowEvHandlerName="OutsoleInventoryDetailTableRowChangeEventHandler" msprop:Generator_RowDeletedName="OutsoleInventoryDetailTableRowDeleted" msprop:Generator_UserTableName="OutsoleInventoryDetailTable" msprop:Generator_RowChangedName="OutsoleInventoryDetailTableRowChanged" msprop:Generator_RowEvArgName="OutsoleInventoryDetailTableRowChangeEvent" msprop:Generator_RowClassName="OutsoleInventoryDetailTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OSCode" msprop:Generator_ColumnVarNameInTable="columnOSCode" msprop:Generator_ColumnPropNameInRow="OSCode" msprop:Generator_ColumnPropNameInTable="OSCodeColumn" msprop:Generator_UserColumnName="OSCode" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalQuantity" msprop:Generator_ColumnVarNameInTable="columnTotalQuantity" msprop:Generator_ColumnPropNameInRow="TotalQuantity" msprop:Generator_ColumnPropNameInTable="TotalQuantityColumn" msprop:Generator_UserColumnName="TotalQuantity" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalMatching" msprop:Generator_ColumnVarNameInTable="columnTotalMatching" msprop:Generator_ColumnPropNameInRow="TotalMatching" msprop:Generator_ColumnPropNameInTable="TotalMatchingColumn" msprop:Generator_UserColumnName="TotalMatching" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductNo" msprop:Generator_ColumnVarNameInTable="columnProductNo" msprop:Generator_ColumnPropNameInRow="ProductNo" msprop:Generator_ColumnPropNameInTable="ProductNoColumn" msprop:Generator_UserColumnName="ProductNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ArticleNo" msprop:Generator_ColumnVarNameInTable="columnArticleNo" msprop:Generator_ColumnPropNameInRow="ArticleNo" msprop:Generator_ColumnPropNameInTable="ArticleNoColumn" msprop:Generator_UserColumnName="ArticleNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ETD" msprop:Generator_ColumnVarNameInTable="columnETD" msprop:Generator_ColumnPropNameInRow="ETD" msprop:Generator_ColumnPropNameInTable="ETDColumn" msprop:Generator_UserColumnName="ETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierName" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_UserColumnName="SupplierName" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="Release" msprop:Generator_ColumnVarNameInTable="columnRelease" msprop:Generator_ColumnPropNameInRow="Release" msprop:Generator_ColumnPropNameInTable="ReleaseColumn" msprop:Generator_UserColumnName="Release" type="xs:int" minOccurs="0" />
+              <xs:element name="Matching" msprop:Generator_ColumnVarNameInTable="columnMatching" msprop:Generator_ColumnPropNameInRow="Matching" msprop:Generator_ColumnPropNameInTable="MatchingColumn" msprop:Generator_UserColumnName="Matching" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantitySupplier" msprop:Generator_ColumnVarNameInTable="columnQuantitySupplier" msprop:Generator_ColumnPropNameInRow="QuantitySupplier" msprop:Generator_ColumnPropNameInTable="QuantitySupplierColumn" msprop:Generator_UserColumnName="QuantitySupplier" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

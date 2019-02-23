@@ -1,0 +1,59 @@
+﻿<Window x:Class="MasterSchedule.Views.ChartScheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chart Schedule" Height="500" Width="Auto" WindowState="Maximized" Loaded="Window_Loaded">
+    <Grid Margin="5,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Date:" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpDateFrom" Margin="5,0,0,0" SelectedDate="3/6/2017"></DatePicker>
+            <TextBlock Text=" to " VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpDateTo" SelectedDate="3/6/2017"></DatePicker>
+            <ComboBox x:Name="cboSection" Margin="5,0,0,0" SelectedIndex="0">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="Sewing" Name="S"></ComboBoxItem>
+                    <ComboBoxItem Content="Assembly" Name="A"></ComboBoxItem>
+                    <ComboBoxItem Content="Outsole" Name="O"></ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+            <Button x:Name="btnViewResult" Margin="10,0,0,0" Content="Create Chart" FontWeight="Bold" Click="btnViewResult_Click" />
+        </StackPanel>
+        <TextBlock x:Name="lblTitle" Text="SCHEDULE CHART" FontSize="20" Grid.Row="1" TextAlignment="Center"/>
+        <DataGrid x:Name="dgAssemblyChart" Grid.Row="2"
+                AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      FrozenColumnCount="1"
+                  VerticalGridLinesBrush="Gray" HorizontalGridLinesBrush="Gray">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,5,0,0">
+            <TextBlock Text="Legend: " FontWeight="Bold"/>
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Background="White" Width="25"/>
+            </Border>
+            <TextBlock Text="No Schedule | " Margin="5,0,0,0"/>
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Background="Green" Width="25"/>
+            </Border>
+            <TextBlock Text="Normal | " Margin="5,0,0,0"/>
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Background="Yellow"  Width="25"/>
+            </Border>
+            <TextBlock Text="Start Date >= Mat's Arrival (from 0 to 7 Days) | " Margin="5,0,0,0"/>
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Background="Orange" Width="25"/>
+            </Border>
+            <TextBlock Text="Mat's Arrival > Start Date | " Margin="5,0,0,0"/>
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Background="Red" Width="25"/>
+            </Border>
+            <TextBlock Text="Finish Date > ETD" Margin="5,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

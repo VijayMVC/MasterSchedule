@@ -1,0 +1,172 @@
+﻿<Window x:Class="MasterSchedule.Views.ImportMachineRequirementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MasterSchedule.Customs"
+        Title="MasterSchedule - Import Machine Requirement" Height="650" Width="Auto" WindowState="Maximized" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer x:Name="scrHeader" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden">
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0" />
+
+                    <ColumnDefinition Width="{Binding ElementName=Column1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column2, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column3, Path=ActualWidth}" />
+
+                    <ColumnDefinition Width="{Binding ElementName=Column4, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_2, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_3, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_4, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_5, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_5_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column4_6, Path=ActualWidth}" />
+
+
+                    <ColumnDefinition Width="{Binding ElementName=Column5_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column5_2, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column5_3, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column5_3_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column5_4, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column5_5, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column5_6, Path=ActualWidth}" />
+
+                    <ColumnDefinition Width="{Binding ElementName=Column6_1_0, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_2, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_3, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_4, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_5, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_6, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_7, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_8, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_9, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_10, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_11, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column6_12, Path=ActualWidth}" />
+
+                    <ColumnDefinition Width="{Binding ElementName=Column7, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_2, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_3, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_4, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_5, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_6, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_7, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column7_8, Path=ActualWidth}" />
+
+                    <ColumnDefinition Width="{Binding ElementName=Column8, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column8_1, Path=ActualWidth}" />
+                    <ColumnDefinition Width="{Binding ElementName=Column8_2, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_3, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_4, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_5, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_6, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_7, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_8, Path=ActualWidth}"/>
+                    <ColumnDefinition Width="{Binding ElementName=Column8_9, Path=ActualWidth}"/>
+
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="4" Grid.ColumnSpan="8" BorderBrush="Black" BorderThickness="1,1,1,0">
+                    <TextBlock Margin="0,3,0,3" Text="CUTTING" TextAlignment="Center" FontWeight="Bold"/>
+                </Border>
+                <Border Grid.Column="12" Grid.ColumnSpan="7" BorderBrush="Black" BorderThickness="0,1,1,0">
+                    <TextBlock Margin="0,3,0,3" Text="PREP" TextAlignment="Center" FontWeight="Bold"/>
+                </Border>
+                <Border Grid.Column="19" Grid.ColumnSpan="13" BorderBrush="Black" BorderThickness="0,1,1,0">
+                    <TextBlock Margin="0,3,0,3" Text="SEWING" TextAlignment="Center" FontWeight="Bold"/>
+                </Border>
+                <Border Grid.Column="32" Grid.ColumnSpan="9" BorderBrush="Black" BorderThickness="0,1,1,0">
+                    <TextBlock Margin="0,3,0,3" Text="STOCKFIT" TextAlignment="Center" FontWeight="Bold"/>
+                </Border>
+                <Border Grid.Column="41" Grid.ColumnSpan="10" BorderBrush="Black" BorderThickness="0,1,1,0">
+                    <TextBlock Margin="0,3,0,3" Text="ASSEMBLY" TextAlignment="Center" FontWeight="Bold"/>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+        <local:CustomDataGrid AutoGenerateColumns="False" x:Name="dgMachineRequirement" RowHeaderWidth="0" CanUserAddRows="False" Grid.Row="1"
+                              FrozenColumnCount="3" ScrollViewer.ScrollChanged="dgMachineRequirement_ScrollChanged"
+                              CanUserResizeRows="False"
+                              HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="true">
+                            <Setter Property="Background" Value="RoyalBlue"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Column1" Header="ArticleNo" Width="Auto" Binding="{Binding ArticleNo}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column2" Header="ShoeName" Width="Auto" Binding="{Binding ShoeName}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column3" Header="PM" Width="Auto" Binding="{Binding PM}" IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="Column4" Header="Quantity" Width="Auto" Binding="{Binding CuttingQuantity}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_1" Header="Worker" Width="Auto" Binding="{Binding CuttingWorker}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_2" Header="Arm&#10;Clicker" Width="Auto" Binding="{Binding CuttingArmClicker}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_3" Header="Beam" Width="Auto" Binding="{Binding CuttingBeam}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_4" Header="CutStrap" Width="Auto" Binding="{Binding CuttingCutStrap}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_5" Header="Laser" Width="Auto" Binding="{Binding CuttingLaser}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_5_1" Header="Puncher&#10;Hole" Width="Auto" Binding="{Binding CuttingPuncherHole}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column4_6" Header="Skiving" Width="Auto" Binding="{Binding CuttingSkiving}" IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="Column5_1" Header="Worker" Width="Auto" Binding="{Binding PrepWorker}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column5_2" Header="Vertical&#10;HF" Width="Auto" Binding="{Binding PrepVerticalHF}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column5_3" Header="Horizontal&#10;HF" Width="Auto" Binding="{Binding PrepHorizontalHF}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column5_3_1" Header="Online Heat&#10;Press" Width="Auto" Binding="{Binding PrepHorizontalHF}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column5_4" Header="Auto&#10;HF" Width="Auto" Binding="{Binding PrepAutoHF}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column5_5" Header="Inye" Width="Auto" Binding="{Binding PrepInye}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column5_6" Header="Hotmelt&#10;Machine" Width="Auto" Binding="{Binding PrepHotmeltMachine}" IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="Column6_1_0" Header="Quantity" Width="Auto" Binding="{Binding SewingQuantity}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_1" Header="Worker" Width="Auto" Binding="{Binding SewingWorker}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_2" Header="Small&#10;Computer" Width="Auto" Binding="{Binding SewingSmallComputer}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_3" Header="Big&#10;Computer" Width="Auto" Binding="{Binding SewingBigComputer}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_4" Header="Ultrasonic" Width="Auto" Binding="{Binding SewingUltrasonic}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_5" Header="4Needle&#10;Flat" Width="Auto" Binding="{Binding Sewing4NeedleFlat}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_6" Header="4Needle&#10;Post" Width="Auto" Binding="{Binding Sewing4NeedlePost}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_7" Header="Long&#10;Table" Width="Auto" Binding="{Binding SewingLongTable}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_8" Header="Eyeleting" Width="Auto" Binding="{Binding SewingEyeleting}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_9" Header="ZZ&#10;Binding" Width="Auto" Binding="{Binding SewingZZBinding}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_10" Header="Holmelt&#10;Machine" Width="Auto" Binding="{Binding SewingHotmeltMachine}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_11" Header="HandHeld&#10;Hotmelt" Width="Auto" Binding="{Binding SewingHandHeldHotmelt}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column6_12" Header="Stationary&#10;HHHotmelt" Width="Auto" Binding="{Binding SewingStationaryHHHotmelt}" IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="Column7" Header="Quantity" Width="Auto" Binding="{Binding StockfitQuantity}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_1" Header="Worker" Width="Auto" Binding="{Binding StockfitWorker}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_2" Header="Vertical&#10;Buffing" Width="Auto" Binding="{Binding StockfitVerticalBuffing}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_3" Header="Horizontal&#10;Buffing" Width="Auto" Binding="{Binding StockfitHorizontalBuffing}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_4" Header="Side&#10;Buffing" Width="Auto" Binding="{Binding StockfitSideBuffing}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_5" Header="Outsole&#10;Stitching" Width="Auto" Binding="{Binding StockfitOutsoleStitching}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_6" Header="Auto&#10;Buffing" Width="Auto" Binding="{Binding StockfitAutoBuffing}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_7" Header="Hydraulic&#10;Cutting" Width="Auto" Binding="{Binding StockfitHydraulicCutting}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column7_8" Header="Pad&#10;Painting" Width="Auto" Binding="{Binding StockfitPadPrinting}" IsReadOnly="True"/>
+
+                <DataGridTextColumn x:Name="Column8" Header="Quantity" Width="Auto" Binding="{Binding AssemblyQuantity}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_1" Header="Worker" Width="Auto" Binding="{Binding AssemblyWorker}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_2" Header="Toe&#10;Lasting" Width="Auto" Binding="{Binding AssemblyToeLasting}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_3" Header="Side&#10;Lasting" Width="Auto" Binding="{Binding AssemblySideLasting}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_4" Header="Heel&#10;Lasting" Width="Auto" Binding="{Binding AssemblyHeelLasting}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_5" Header="Side&#10;Press" Width="Auto" Binding="{Binding AssemblySidePress}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_6" Header="Top&#10;Down" Width="Auto" Binding="{Binding AssemblyTopDown}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_7" Header="Hotmelt&#10;Machine" Width="Auto" Binding="{Binding AssemblyHotmeltMachine}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_8" Header="Sockliner&#10;Hotmelt" Width="Auto" Binding="{Binding AssemblySocklinerHotmelt}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Column8_9" Header="VWrinkle&#10;Remover" Width="Auto" Binding="{Binding AssemblyVWrinkleRemover}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </local:CustomDataGrid>
+        <Button x:Name="btnImport" Grid.Row="2" Margin="0,2,2,2" MinWidth="150" HorizontalAlignment="Right" Content="Import" ToolTip="Click to import requirement machine" FontWeight="Bold" IsEnabled="False" Click="btnImport_Click"></Button>
+        <StatusBar Grid.Row="3">
+            <TextBlock Text="Processing:"/>
+            <ProgressBar x:Name="progressBar" Width="100" Height="15" Minimum="0" Value="0"/>
+            <TextBlock x:Name="lblStatus" Text="" FontWeight="Bold"/>
+        </StatusBar>
+    </Grid>
+</Window>

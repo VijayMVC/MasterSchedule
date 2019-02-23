@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OutsoleMaterialDetailVarianceDataSet" targetNamespace="http://tempuri.org/OutsoleMaterialDetailVarianceDataSet.xsd" xmlns:mstns="http://tempuri.org/OutsoleMaterialDetailVarianceDataSet.xsd" xmlns="http://tempuri.org/OutsoleMaterialDetailVarianceDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OutsoleMaterialDetailVarianceDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OutsoleMaterialDetailVarianceDataSet" msprop:Generator_UserDSName="OutsoleMaterialDetailVarianceDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutsoleMaterialDetailVarianceTable" msprop:Generator_TableClassName="OutsoleMaterialDetailVarianceTableDataTable" msprop:Generator_TableVarName="tableOutsoleMaterialDetailVarianceTable" msprop:Generator_TablePropName="OutsoleMaterialDetailVarianceTable" msprop:Generator_RowDeletingName="OutsoleMaterialDetailVarianceTableRowDeleting" msprop:Generator_RowChangingName="OutsoleMaterialDetailVarianceTableRowChanging" msprop:Generator_RowEvHandlerName="OutsoleMaterialDetailVarianceTableRowChangeEventHandler" msprop:Generator_RowDeletedName="OutsoleMaterialDetailVarianceTableRowDeleted" msprop:Generator_UserTableName="OutsoleMaterialDetailVarianceTable" msprop:Generator_RowChangedName="OutsoleMaterialDetailVarianceTableRowChanged" msprop:Generator_RowEvArgName="OutsoleMaterialDetailVarianceTableRowChangeEvent" msprop:Generator_RowClassName="OutsoleMaterialDetailVarianceTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductNo" msprop:Generator_ColumnVarNameInTable="columnProductNo" msprop:Generator_ColumnPropNameInRow="ProductNo" msprop:Generator_ColumnPropNameInTable="ProductNoColumn" msprop:Generator_UserColumnName="ProductNo" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleCode" msprop:Generator_ColumnVarNameInTable="columnOutsoleCode" msprop:Generator_ColumnPropNameInRow="OutsoleCode" msprop:Generator_ColumnPropNameInTable="OutsoleCodeColumn" msprop:Generator_UserColumnName="OutsoleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="StartDelivery" msprop:Generator_ColumnVarNameInTable="columnStartDelivery" msprop:Generator_ColumnPropNameInRow="StartDelivery" msprop:Generator_ColumnPropNameInTable="StartDeliveryColumn" msprop:Generator_UserColumnName="StartDelivery" type="xs:string" minOccurs="0" />
+              <xs:element name="FinishDelivery" msprop:Generator_ColumnVarNameInTable="columnFinishDelivery" msprop:Generator_ColumnPropNameInRow="FinishDelivery" msprop:Generator_ColumnPropNameInTable="FinishDeliveryColumn" msprop:Generator_UserColumnName="FinishDelivery" type="xs:string" minOccurs="0" />
+              <xs:element name="DeliveryEFD" msprop:Generator_ColumnVarNameInTable="columnDeliveryEFD" msprop:Generator_ColumnPropNameInRow="DeliveryEFD" msprop:Generator_ColumnPropNameInTable="DeliveryEFDColumn" msprop:Generator_UserColumnName="DeliveryEFD" type="xs:string" minOccurs="0" />
+              <xs:element name="LeadTime" msprop:Generator_ColumnVarNameInTable="columnLeadTime" msprop:Generator_ColumnPropNameInRow="LeadTime" msprop:Generator_ColumnPropNameInTable="LeadTimeColumn" msprop:Generator_UserColumnName="LeadTime" type="xs:string" minOccurs="0" />
+              <xs:element name="DeliveryPerformance" msprop:Generator_ColumnVarNameInTable="columnDeliveryPerformance" msprop:Generator_ColumnPropNameInRow="DeliveryPerformance" msprop:Generator_ColumnPropNameInTable="DeliveryPerformanceColumn" msprop:Generator_UserColumnName="DeliveryPerformance" type="xs:string" minOccurs="0" />
+              <xs:element name="DelayVariance" msprop:Generator_ColumnVarNameInTable="columnDelayVariance" msprop:Generator_ColumnPropNameInRow="DelayVariance" msprop:Generator_ColumnPropNameInTable="DelayVarianceColumn" msprop:Generator_UserColumnName="DelayVariance" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

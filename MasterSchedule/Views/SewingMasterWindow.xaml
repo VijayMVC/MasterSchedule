@@ -1,0 +1,167 @@
+﻿<Window x:Class="MasterSchedule.Views.SewingMasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MasterSchedule.Customs"
+        Title="Master Schedule - Sewing Master File" Height="640" Width="Auto"
+         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized" Closing="Window_Closing" Activated="Window_Activated" Deactivated="Window_Deactivated">
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control" Command="Save"></KeyBinding>
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="Save" Executed="SaveCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Background="LightGray">
+            <Menu.Items>
+                <MenuItem Header="File">
+                    <MenuItem x:Name="btnSave" Header="_Save" IsEnabled="False" InputGestureText="Ctrl+S" Command="Save" Click="btnSave_Click"/>
+                    <MenuItem Header="_Exit"/>
+                </MenuItem>
+                <!--<MenuItem x:Name="btnEnableSimulation" Header="Enable Simulation" IsEnabled="False"  Visibility="Hidden" Click="btnEnableSimulation_Click"/>
+                <MenuItem x:Name="btnDisableSimulation" Header="Disable Simulation" IsEnabled="False"  Visibility="Hidden" Click="btnDisableSimulation_Click"/>-->
+            </Menu.Items>
+        </Menu>
+        <TextBlock x:Name="lblPopup" Visibility="Collapsed"/>
+        <Popup x:Name="popup" IsOpen="False">
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Border>
+                                <TextBlock Text="{Binding ProductNo}" FontWeight="Bold"/>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Popup>
+        <local:CustomDataGrid x:Name="dgSewingMaster" Grid.Row="1" AutoGenerateColumns="False" 
+                  CanUserAddRows="False" CanUserResizeRows="False" FrozenColumnCount="14" AlternationCount="2" 
+                  AlternatingRowBackground="LightCyan"
+                  CanUserReorderColumns="False" SelectionUnit="CellOrRowHeader"
+                  KeyDown="dgSewingMaster_KeyDown" CellEditEnding="dgSewingMaster_CellEditEnding" Sorting="dgSewingMaster_Sorting"
+                  MouseLeftButtonDown="dgSewingMaster_MouseLeftButtonDown"
+                  HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray"   BeginningEdit="dgSewingMaster_BeginningEdit" 
+                  PreviewMouseLeftButtonDown="dgSewingMaster_PreviewMouseLeftButtonDown" 
+                  MouseMove="dgSewingMaster_MouseMove" DragLeave="dgSewingMaster_DragLeave" 
+                  Drop="dgSewingMaster_Drop" AllowDrop="True" DragOver="dgSewingMaster_DragOver" SelectedCellsChanged="dgSewingMaster_SelectedCellsChanged">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="RoyalBlue" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.ContextMenu>
+                <ContextMenu x:Name="ctmTranfer" Visibility="Collapsed">
+                    <MenuItem x:Name="miTranfer" Header="Tranfer to Sewing Master" Click="miTranfer_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Sequence}" Header="SEQUENCE" IsReadOnly="True" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding ProductNo}" Header="PROD.&#10;NO." FontWeight="Bold" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background" Value="{Binding ProductNoBackground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="colCountry" Binding="{Binding Country}" Header="COUNTRY" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colStyle" Binding="{Binding ShoeName}" Header="STYLE" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding ArticleNo}" Header="ART.&#10;NO." IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding PatternNo}" Header="PATT.&#10;NO." IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="QUANTITY" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colETD" Binding="{Binding ETD, StringFormat = 'dd-MMM'}" Header="EFD" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Header="Memo No." Width="Auto" Binding="{Binding MemoId}" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding UpperMatsArrival}" Header="Upper&#10;Mat's&#10;Arrival" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding UpperMatsArrivalForeground}" />
+                            <Setter Property="Background" Value="{Binding UpperMatsArrivalBackground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding SewingMatsArrival}" Header="Sewing&#10;Mat's&#10;Arrival" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding SewingMatsArrivalForeground}" />
+                            <Setter Property="Background" Value="{Binding SewingMatsArrivalBackground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding OSMatsArrival}" Header="OS&#10;Mat's&#10;Arrival" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding OSMatsArrivalForeground}" />
+                            <Setter Property="Background" Value="{Binding OSMatsArrivalBackground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding AssemblyMatsArrival}" Header="Assy&#10;Mat's&#10;Arrival" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding AssemblyMatsArrivalForeground}" />
+                            <Setter Property="Background" Value="{Binding AssemblyMatsArrivalBackground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="colSewingLine" Binding="{Binding SewingLine, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Header="Sewing&#10;Line" CanUserSort="True"/>
+                <DataGridTextColumn x:Name="colSewingPrep" Binding="{Binding SewingPrep}" Header="Sewing&#10;Prep" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding SewingStartDate, StringFormat = 'M/d'}" Header="Sewing&#10;Start&#10;Date" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding SewingStartDateForeground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding SewingFinishDate, StringFormat = 'M/d'}" Header="Sewing&#10;Finish&#10;Date" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding SewingFinishDateForeground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="colSewingQuota" Binding="{Binding SewingQuota}" Header="Sewing&#10;Quota" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colSewingActualStartDate" Binding="{Binding SewingActualStartDate}" Header="Sewing&#10;Planned&#10;Start&#10;Date" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colSewingActualFinishDate" Binding="{Binding SewingActualFinishDate}" Header="Sewing&#10;Planned&#10;Finish&#10;Date" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colSewingActualStartDateAuto" Binding="{Binding SewingActualStartDateAuto}" Header="Sewing&#10;Actual&#10;Start&#10;Date" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colSewingActualFinishDateAuto" Binding="{Binding SewingActualFinishDateAuto}" Header="Sewing&#10;Actual&#10;Finish&#10;Date" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colSewingBalance" Binding="{Binding SewingBalance}" Header="Sewing&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding OSFinishDate, StringFormat = 'M/d'}" Header="Stockfit&#10;Finish&#10;Date" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding OSBalance}" Header="Stockfit&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding CutAStartDate, StringFormat = 'M/d'}" Header="Cut A&#10;Start&#10;Date" IsReadOnly="True" CanUserSort="False">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding CutAStartDateForeground}" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding CutAFinishDate, StringFormat = 'M/d'}" Header="Cut A&#10;Finish&#10;Date" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colCutAQuota" Binding="{Binding CutAQuota}" Header="Cut A&#10;Quota" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colAutoCut" Binding="{Binding AutoCut}" Header="Auto&#10;Cut" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colLaserCut" Binding="{Binding LaserCut}" Header="Laser&#10;Cut" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colHuasenCut" Binding="{Binding HuasenCut}" Header="Huasen&#10;Cut" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colCutAActualStartDate" Binding="{Binding CutAActualStartDate}" Header="Cut A&#10;Actual&#10;Start" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colCutAActualFinishDate" Binding="{Binding CutAActualFinishDate}" Header="Cut A&#10;Actual&#10;Finish" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colCutABalance" Binding="{Binding CutABalance}" Header="Cut A&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colPrintingBalance" Binding="{Binding PrintingBalance}" Header="Printing&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colH_FBalance" Binding="{Binding H_FBalance}" Header="H/F&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colEmbroideryBalance" Binding="{Binding EmbroideryBalance}" Header="Embro&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colCutBActualStartDate" Binding="{Binding CutBActualStartDate}" Header="Cut B&#10;Actual&#10;Start" IsReadOnly="True" CanUserSort="False"/>
+                <DataGridTextColumn x:Name="colCutBBalance" Binding="{Binding CutBBalance}" Header="Cut B&#10;Balance" IsReadOnly="True" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </local:CustomDataGrid>
+        <Grid Grid.Row="2">
+            <Button x:Name="btnCaculate" MinWidth="150" HorizontalAlignment="Left" Content="Calculate" IsEnabled="False" Click="btnCaculate_Click" />
+        </Grid>
+    </Grid>
+</Window>

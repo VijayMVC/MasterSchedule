@@ -1,0 +1,263 @@
+﻿<Window x:Class="MasterSchedule.Views.RawMaterialWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MasterSchedule.Customs"
+        Title="Master Schedule - WH Master File" Height="640" Width="Auto"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized" Closing="Window_Closing" 
+        Activated="Window_Activated" Deactivated="Window_Deactivated">
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control" Command="Save"></KeyBinding>
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="Save" Executed="SaveCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Background="LightGray">
+            <Menu.Items>
+                <MenuItem Header="File">
+                    <MenuItem x:Name="btnSave" Header="_Save" IsEnabled="False" InputGestureText="Ctrl+S" Command="Save" Click="btnSave_Click"/>
+                    <MenuItem Header="_Exit"/>
+                </MenuItem>
+            </Menu.Items>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer x:Name="scrlHeader" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden">
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding ElementName=dgRawMaterial, Path=BorderThickness.Left}" />
+                        <ColumnDefinition Width="{Binding ElementName=dgRawMaterial, Path=RowHeaderWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column1, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column2, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column3, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column4, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column5, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column5_1, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column6, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column7, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column7_1, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column7_2, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column7_1_1, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column10_1, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column10_2, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column10_3, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column8, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column9, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column10, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column11, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column12, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column13, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column14, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column15, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column16, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column17, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column18, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column19, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column20, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column21, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column22, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column23, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column24, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25_1, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25_2, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25_3, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25_4, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25_5, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column25_6, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column26, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column27, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column28, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column29, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column30, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column31, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column32, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column33, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column34, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column35, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column36, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column37, Path=ActualWidth}" />
+                        <ColumnDefinition Width="{Binding ElementName=Column38, Path=ActualWidth}" />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="13" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="1,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="TAIWAN" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="16" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="LAMINATION" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="19" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="CUTTING" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="22" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="LEATHER" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="25" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="SEMI-PROCESS" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="28" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="SEWING" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="31" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="OUTSOLE" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="34" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="UPPER COMPONENT" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="37" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="INSOCK" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="40" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="SECURITY LABEL" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="43" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="ASSEMBLY" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="46" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="SOCK LINING" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border Grid.Column="49" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0,1,1,0">
+                        <TextBlock Margin="0,3,0,3" Text="CARTON" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+            <local:CustomDataGrid AutoGenerateColumns="False" x:Name="dgRawMaterial" Grid.Row="1" RowHeaderWidth="10" CanUserAddRows="False" SelectionUnit="CellOrRowHeader" AlternatingRowBackground="LightCyan" AlternationCount="2" 
+                                  CellEditEnding="dgRawMaterial_CellEditEnding" KeyDown="dgRawMaterial_KeyDown" FrozenColumnCount="10" ScrollViewer.ScrollChanged="dgRawMaterial_ScrollChanged" CanUserResizeRows="False"
+                                  MouseLeftButtonDown="dgRawMaterial_MouseLeftButtonDown" Sorting="dgRawMaterial_Sorting"
+                                  HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray"  SelectedCellsChanged="dgRawMaterial_SelectedCellsChanged">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="Background" Value="RoyalBlue" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="miDisable" Header="Disable" Click="miDisable_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="Column1" Header="PROD.&#10;NO." Width="Auto" Binding="{Binding ProductNo}" FontWeight="Bold" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="{Binding ProductNoBackground}" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Column2" Header="COUNTRY" Width="Auto" Binding="{Binding Country}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column3" Header="STYLE" Width="Auto" Binding="{Binding ShoeName}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column4" Header="ARTICLE&#10;NO." Width="Auto" Binding="{Binding ArticleNo}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column5" Header="PATT. NO." Width="Auto" Binding="{Binding PatternNo}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column5_1" Header="OUTSOLE&#10;CODE" Width="Auto" Binding="{Binding OutsoleCode}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column6" Header="QUANTITY" Width="Auto" Binding="{Binding Quantity}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column7" Header="EFD" Width="Auto" Binding="{Binding ETD, StringFormat='dd-MMM', ConverterCulture=en-US}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column7_1" Binding="{Binding CutAStartDate, StringFormat = 'M/d'}" Header="Cut A&#10;Start&#10;Date" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Foreground" Value="{Binding CutAStartDateForeground}" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Column7_1_1" Binding="{Binding AssyStartDate, StringFormat = 'M/d'}" Header="Assy&#10;Start&#10;Date" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Foreground" Value="{Binding AssyStartDateForeground}" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Column7_2" Header="Memo No." Width="Auto" Binding="{Binding MemoId}" IsReadOnly="True"/>
+                    
+                    <DataGridTextColumn x:Name="Column10_1" Header="EFD" Width="Auto" Binding="{Binding TAIWAN_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column10_2" Header="Actual&#10;Date" Width="Auto" Binding="{Binding TAIWAN_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column10_3" Header="REMARKS" Width="Auto" Binding="{Binding TAIWAN_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column8" Header="EFD" Width="Auto" Binding="{Binding LAMINATION_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column9" Header="Actual&#10;Date" Width="Auto" Binding="{Binding LAMINATION_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column10" Header="REMARKS" Width="Auto" Binding="{Binding LAMINATION_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column11" Header="EFD" Width="Auto" Binding="{Binding CUTTING_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column12" Header="Actual&#10;Date" Width="Auto" Binding="{Binding CUTTING_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column13" Header="REMARKS" Width="Auto" Binding="{Binding CUTTING_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column14" Header="EFD" Width="Auto" Binding="{Binding LEATHER_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column15" Header="Actual&#10;Date" Width="Auto" Binding="{Binding LEATHER_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column16" Header="REMARKS" Width="Auto" Binding="{Binding LEATHER_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column17" Header="EFD" Width="Auto" Binding="{Binding SEMIPROCESS_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column18" Header="Actual&#10;Date" Width="Auto" Binding="{Binding SEMIPROCESS_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column19" Header="REMARKS" Width="Auto" Binding="{Binding SEMIPROCESS_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column20" Header="EFD" Width="Auto" Binding="{Binding SEWING_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column21" Header="Actual&#10;Date" Width="Auto" Binding="{Binding SEWING_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column22" Header="REMARKS" Width="Auto" Binding="{Binding SEWING_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column23" Header="EFD" Width="Auto" Binding="{Binding OUTSOLE_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column24" Header="Actual&#10;Date" Width="Auto" Binding="{Binding OUTSOLE_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="{Binding OUTSOLE_ActualDate_BACKGROUND,UpdateSourceTrigger=PropertyChanged}"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Column25" Header="REMARKS" Width="Auto" Binding="{Binding OUTSOLE_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column25_1" Header="EFD" Width="Auto" Binding="{Binding UPPERCOMPONENT_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column25_2" Header="Actual&#10;Date" Width="Auto" Binding="{Binding UPPERCOMPONENT_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column25_3" Header="REMARKS" Width="Auto" Binding="{Binding UPPERCOMPONENT_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column25_4" Header="EFD" Width="Auto" Binding="{Binding INSOCK_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column25_5" Header="Actual&#10;Date" Width="Auto" Binding="{Binding INSOCK_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column25_6" Header="Remarks" Width="Auto" Binding="{Binding INSOCK_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    
+                    <DataGridTextColumn x:Name="Column26" Header="EFD" Width="Auto" Binding="{Binding SECURITYLABEL_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column27" Header="Actual&#10;Date" Width="Auto" Binding="{Binding SECURITYLABEL_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column28" Header="REMARKS" Width="Auto" Binding="{Binding SECURITYLABEL_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column29" Header="EFD" Width="Auto" Binding="{Binding ASSEMBLY_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column30" Header="Actual&#10;Date" Width="Auto" Binding="{Binding ASSEMBLY_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column31" Header="REMARKS" Width="Auto" Binding="{Binding ASSEMBLY_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column32" Header="EFD" Width="Auto" Binding="{Binding SOCKLINING_ETD, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column33" Header="Actual&#10;Date" Width="Auto" Binding="{Binding SOCKLINING_ActualDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Column34" Header="REMARKS" Width="Auto" Binding="{Binding SOCKLINING_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+
+                    <DataGridTextColumn x:Name="Column35" Header="EFD" Width="Auto" Binding="{Binding CARTON_ETD, UpdateSourceTrigger=PropertyChanged}" SortMemberPath="CARTON_ETD_Sort" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="{Binding CARTON_ETD_Background}"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Column36" Header="Actual&#10;Date" Width="Auto" Binding="{Binding CARTON_ActualDate, UpdateSourceTrigger=PropertyChanged}" SortMemberPath="CARTON_ActualDate_Sort" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="{Binding CARTON_ActualDate_Background}"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Column37" Header="REMARKS" Width="Auto" Binding="{Binding CARTON_Remarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    
+                    <DataGridTextColumn x:Name="Column38" Header="Loading&#10;Date" Binding="{Binding LoadingDate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </local:CustomDataGrid>
+        </Grid>
+        <Button Grid.Row="2" x:Name="btnReload" Content="_Reload WH Master File" MinWidth="150" HorizontalAlignment="Left" IsEnabled="False" Click="btnReload_Click" Foreground="Blue"  Margin="0,2,0,0"/>
+    </Grid>
+</Window>
+    <!---->

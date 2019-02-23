@@ -1,0 +1,114 @@
+﻿<Window x:Class="MasterSchedule.Views.UpdateOrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Master Schedule - Update Orders" Height="Auto" SizeToContent="Height" MinWidth="1000" WindowStartupLocation="CenterScreen">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <GroupBox Padding="5" BorderBrush="Black">
+                <GroupBox.Header>
+                    <TextBlock Text="Update Order, SizeRun" FontSize="14" FontStyle="Italic" FontWeight="Bold"/>
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Prod No.:" VerticalAlignment="Bottom" FontWeight="Bold"/>
+                        <TextBox x:Name="txtProductNo" Grid.Column="1" Margin="5,0,0,0" MinWidth="100" BorderBrush="Black" BorderThickness="1,1,1,1" GotKeyboardFocus="txtProductNo_GotKeyboardFocus"/>
+                        <Button x:Name="btnSearch" Grid.Column="2" Margin="10,0,0,0" MinWidth="75" Content="Search" IsDefault="True" FontWeight="Bold" Click="btnSearch_Click" />
+                        <Button x:Name="btnDelete" Grid.Column="3" Margin="10,0,0,0" MinWidth="75" Content="Delete" FontWeight="Bold" Click="btnDelete_Click" />
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" x:Name="dgOrder" Margin="0,2,0,0" 
+                  CanUserAddRows="False" 
+                  SelectionUnit="CellOrRowHeader" AutoGenerateColumns="False"
+                  AlternationCount="2" AlternatingRowBackground="LightCyan"
+                  HorizontalGridLinesBrush="LightGray" 
+                  VerticalGridLinesBrush="LightGray">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="GTNPO No." Binding="{Binding GTNPONo}"/>
+                            <DataGridTextColumn Width="Auto" Header="UCustomerCode" Binding="{Binding UCustomerCode}"/>
+                            <DataGridTextColumn Width="Auto" Header="EFD" Binding="{Binding ETD, StringFormat='yyyy-MM-dd'}"/>
+                            <DataGridTextColumn Width="Auto" Header="Article No." Binding="{Binding ArticleNo}"/>
+                            <DataGridTextColumn Width="Auto" Header="Shoe Name" Binding="{Binding ShoeName}"/>
+                            <DataGridTextColumn Width="Auto" Header="QTY" Binding="{Binding Quantity}"/>
+                            <DataGridTextColumn Width="Auto" Header="Pattern No" Binding="{Binding PatternNo}"/>
+                            <DataGridTextColumn Width="Auto" Header="Midsole" Binding="{Binding MidsoleCode}"/>
+                            <DataGridTextColumn Width="Auto" Header="Outsole Code" Binding="{Binding OutsoleCode}"/>
+                            <DataGridTextColumn Width="Auto" Header="Last" Binding="{Binding LastCode}"/>
+                            <DataGridTextColumn Width="Auto" Header="Country" Binding="{Binding Country}"/>
+                            <DataGridCheckBoxColumn Width="Auto" Header="Is Enable"  Binding="{Binding IsEnable}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnUpdateOrder" Grid.Row="2" Margin="0,2,0,0" MinWidth="125" Content="Update Order" HorizontalAlignment="Right" FontWeight="Bold" IsEnabled="False" Click="btnUpdateOrder_Click" />
+                    <TextBlock Text="Size Run" Grid.Row="3" FontWeight="Bold"/>
+                    <DataGrid x:Name="dgSizeRun" Grid.Row="4" Margin="0,2,0,0" CanUserAddRows="False" SelectionUnit="CellOrRowHeader" AutoGenerateColumns="False">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                    </DataGrid>
+                    <Button x:Name="btnUpdateSizeRun" Grid.Row="5" Margin="0,2,0,0" MinWidth="125" Content="Update Size Run" HorizontalAlignment="Right" FontWeight="Bold" IsEnabled="False" Click="btnUpdateSizeRun_Click" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="2" Margin="0,5,0,0" Padding="5" BorderBrush="Black">
+                <GroupBox.Header>
+                    <TextBlock Text="Update Outsole Size, Midsole Size" FontSize="14" FontStyle="Italic" FontWeight="Bold"/>
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Outsole Code: " VerticalAlignment="Bottom" FontWeight="Bold"/>
+                        <TextBox x:Name="txtOutsoleCode" MinWidth="100" Margin="5,0,0,0" BorderBrush="Black" BorderThickness="1,1,1,1" GotKeyboardFocus="txtOutsoleCode_GotKeyboardFocus"/>
+                        <Button x:Name="btnSearchOutsoleCode" Content="_Search" FontWeight="Bold"  Margin="5,0,0,0" MinWidth="60" Click="btnSearchOutsoleCode_Click"/>
+                        <Button x:Name="btnCheckOutsoleCodeNotYetUpdateSizeOutsole" Content="_Check" FontWeight="Bold"  Margin="5,0,0,0" MinWidth="60" Click="btnCheckOutsoleCodeNotYetUpdateSizeOutsole_Click"/>
+                    </StackPanel>
+                    <DataGrid Margin="0,2,0,0" Grid.Row="1" x:Name="dgSizeMap" CanUserAddRows="False" SelectionUnit="CellOrRowHeader" AutoGenerateColumns="False">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                    </DataGrid>
+                    <Button x:Name="btnUpdateSizeMap" Grid.Row="2" Margin="0,5,0,0" MinWidth="125" Content="_Update Size" HorizontalAlignment="Right" FontWeight="Bold" IsEnabled="False" Click="btnUpdateSizeMap_Click"/>
+
+                    <ProgressBar Grid.Row="3" Margin="0,5,0,5" Height="8" x:Name="prgStatusUpdateOutsoleCode" Value="0" Background="Transparent" BorderBrush="Transparent"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="4">
+                        <TextBlock Text="ArticleNo (exclude color code): " VerticalAlignment="Bottom" FontWeight="Bold"/>
+                        <TextBox x:Name="txtArticleNo" MinWidth="100" Margin="5,0,0,0" BorderBrush="Black" BorderThickness="1,1,1,1" GotKeyboardFocus="txtArticleNo_GotKeyboardFocus"/>
+                        <Button x:Name="btnSearchArticle" Content="_Search" FontWeight="Bold"  Margin="5,0,0,0" MinWidth="60" Click="btnSearchArticle_Click"/>
+                    </StackPanel>
+                    <DataGrid Margin="0,2,0,0" Grid.Row="5" x:Name="dgSizeMapByArticle" CanUserAddRows="False" SelectionUnit="CellOrRowHeader" AutoGenerateColumns="False">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                    </DataGrid>
+                    <Button x:Name="btnUpdateSizeMapByArticle" Grid.Row="6" Margin="0,5,0,0" MinWidth="125" Content="_Update Size" HorizontalAlignment="Right" FontWeight="Bold" IsEnabled="False" Click="btnUpdateSizeMapByArticle_Click"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
+</Window>

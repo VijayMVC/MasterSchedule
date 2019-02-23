@@ -1,0 +1,145 @@
+﻿<Window x:Class="MasterSchedule.Views.SearchProductionMemoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MasterSchedule - Search Production Memo" Height="Auto" Width="640" Loaded="Window_Loaded" WindowState="Maximized">
+    <ScrollViewer>
+        <Grid Margin="5,5,5,5">
+            <StackPanel Orientation="Vertical">
+                <GroupBox Header="Search">
+                    <StackPanel Orientation="Vertical">
+                        <Expander Header="Search by Production Number" Background="LightGray">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Enter [Production Number] to Search:" VerticalAlignment="Bottom"/>
+                                <StackPanel Orientation="Horizontal">                                    
+                                    <TextBox x:Name="txtProductionNumber" MinWidth="200" Margin="5,0,0,0" CharacterCasing="Upper"/>
+                                    <Button x:Name="btnSearchbyProductionNumber" Content="Search by Production Number" FontWeight="Bold" Margin="5,0,0,0" Click="btnSearchbyProductionNumber_Click"/>
+                                </StackPanel>
+                                <TextBlock Text="PRODUCTION MEMO FOUND" TextAlignment="Center"/>
+                                <DataGrid x:Name="dgProductionMemo" Margin="5,5,5,5"
+                                          IsReadOnly="True" AutoGenerateColumns="False" MouseDoubleClick="dgProductionMemo_MouseDoubleClick">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="colMemoNo" Header="Memo No." Binding="{Binding MemoId}"/>
+                                        <DataGridTextColumn Header="Section" Binding="{Binding SectionId}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </Expander>
+                        <TextBlock Text="Enter [Memo No.] to Search:" VerticalAlignment="Bottom" Margin="0,10,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">                            
+                            <TextBox x:Name="txtMemoId" MinWidth="200" Margin="5,0,0,0" CharacterCasing="Upper" />
+                            <Button x:Name="btnSearch" Content="Search by Memo No." FontWeight="Bold" Margin="5,0,0,0" Click="btnSearch_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+                <TextBlock Margin="0,10,0,0" Text="Memo No.:"/>
+                <TextBlock x:Name="lblMemoId" FontWeight="Bold"/>
+                <TextBlock Margin="0,10,0,0" Text="Section:"/>
+                <ComboBox x:Name="cboSection" SelectedValuePath="SectionId" DisplayMemberPath="Name" IsEnabled="False"/>
+                <TextBlock Margin="0,10,0,0" Text="Apply to:"/>
+                <DataGrid x:Name="dgProductionNumber" 
+                      CanUserAddRows="True"
+                      CanUserDeleteRows="True"
+                      AutoGenerateColumns="False"
+                      CanUserResizeRows="False"
+                      MaxHeight="200">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Production Number" Binding="{Binding Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Margin="0,10,0,0" Text="Picture:"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                    <StackPanel Orientation="Horizontal" Height="320">
+                        <Border BorderBrush="Gray" BorderThickness="1,1,1,1" Width="320"
+                                Background="LightGray">
+                            <Image x:Name="imgPicture" Stretch="Uniform">
+                                <Image.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Clear" Click="miClear_Click"/>
+                                    </ContextMenu>
+                                </Image.ContextMenu>
+                            </Image>
+                        </Border>
+                        <Border Margin="10,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" Width="320"
+                                Background="LightGray">
+                            <Grid>
+                                <TextBlock Text="Picture 1" TextAlignment="Center" Foreground="White"/>
+                                <Image x:Name="imgPicture1" Stretch="Uniform">
+                                    <Image.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Clear" Click="miClear_Click"/>
+                                        </ContextMenu>
+                                    </Image.ContextMenu>
+                                </Image>
+                            </Grid>
+                        </Border>
+                        <Border Margin="10,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" Width="320"
+                                Background="LightGray">
+                            <Grid>
+                                <TextBlock Text="Picture 2" TextAlignment="Center" Foreground="White"/>
+                                <Image x:Name="imgPicture2" Stretch="Uniform">
+                                    <Image.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Clear" Click="miClear_Click"/>
+                                        </ContextMenu>
+                                    </Image.ContextMenu>
+                                </Image>
+                            </Grid>
+                        </Border>
+                        <Border Margin="10,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" Width="320"
+                                Background="LightGray">
+                            <Grid>
+                                <TextBlock Text="Picture 3" TextAlignment="Center" Foreground="White"/>
+                                <Image x:Name="imgPicture3" Stretch="Uniform">
+                                    <Image.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Clear" Click="miClear_Click"/>
+                                        </ContextMenu>
+                                    </Image.ContextMenu>
+                                </Image>
+                            </Grid>
+                        </Border>
+                        <Border Margin="10,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" Width="320"
+                                Background="LightGray">
+                            <Grid>
+                                <TextBlock Text="Picture 4" TextAlignment="Center" Foreground="White"/>
+                                <Image x:Name="imgPicture4" Stretch="Uniform">
+                                    <Image.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Clear" Click="miClear_Click"/>
+                                        </ContextMenu>
+                                    </Image.ContextMenu>
+                                </Image>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnSavePicture" Content="Download Picture" Width="150" Click="btnSavePicture_Click">
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="miSavePicture1" Header="Download Picture 1" Click="miSavePicture1_Click"/>
+                                <MenuItem x:Name="miSavePicture2" Header="Download Picture 2" Click="miSavePicture2_Click"/>
+                                <MenuItem x:Name="miSavePicture3" Header="Download Picture 3" Click="miSavePicture3_Click"/>
+                                <MenuItem x:Name="miSavePicture4" Header="Download Picture 4" Click="miSavePicture4_Click"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    
+                    <Button x:Name="btnBrowserPicture" Margin="5,0,0,0" Content="Browser Picture" Width="150" Click="btnBrowserPicture_Click">
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="miBrowserPicture1" Header="Browser Picture 1" Click="miBrowserPicture1_Click"/>
+                                <MenuItem x:Name="miBrowserPicture2" Header="Browser Picture 2" Click="miBrowserPicture2_Click"/>
+                                <MenuItem x:Name="miBrowserPicture3" Header="Browser Picture 3" Click="miBrowserPicture3_Click"/>
+                                <MenuItem x:Name="miBrowserPicture4" Header="Browser Picture 4" Click="miBrowserPicture4_Click"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                </StackPanel>
+
+                <Button x:Name="btnSave" Margin="0,5,0,0" Content="Save Memo" FontWeight="Bold" Click="btnSave_Click" IsEnabled="False"/>
+                <Button x:Name="btnDelete" Margin="0,5,0,0" Content="Delete?" FontWeight="Bold" Width="100" HorizontalAlignment="Right" Click="btnDelete_Click" IsEnabled="False"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

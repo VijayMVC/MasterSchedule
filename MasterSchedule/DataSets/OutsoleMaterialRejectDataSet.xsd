@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OutsoleMaterialRejectDataSet" targetNamespace="http://tempuri.org/OutsoleMaterialRejectDataSet.xsd" xmlns:mstns="http://tempuri.org/OutsoleMaterialRejectDataSet.xsd" xmlns="http://tempuri.org/OutsoleMaterialRejectDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OutsoleMaterialRejectDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OutsoleMaterialRejectDataSet" msprop:Generator_UserDSName="OutsoleMaterialRejectDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutsoleMaterialRejectTable" msprop:Generator_TableClassName="OutsoleMaterialRejectTableDataTable" msprop:Generator_TableVarName="tableOutsoleMaterialRejectTable" msprop:Generator_RowChangedName="OutsoleMaterialRejectTableRowChanged" msprop:Generator_TablePropName="OutsoleMaterialRejectTable" msprop:Generator_RowDeletingName="OutsoleMaterialRejectTableRowDeleting" msprop:Generator_RowChangingName="OutsoleMaterialRejectTableRowChanging" msprop:Generator_RowEvHandlerName="OutsoleMaterialRejectTableRowChangeEventHandler" msprop:Generator_RowDeletedName="OutsoleMaterialRejectTableRowDeleted" msprop:Generator_RowClassName="OutsoleMaterialRejectTableRow" msprop:Generator_UserTableName="OutsoleMaterialRejectTable" msprop:Generator_RowEvArgName="OutsoleMaterialRejectTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductNo" msprop:Generator_ColumnVarNameInTable="columnProductNo" msprop:Generator_ColumnPropNameInRow="ProductNo" msprop:Generator_ColumnPropNameInTable="ProductNoColumn" msprop:Generator_UserColumnName="ProductNo" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleCode" msprop:Generator_ColumnVarNameInTable="columnOutsoleCode" msprop:Generator_ColumnPropNameInRow="OutsoleCode" msprop:Generator_ColumnPropNameInTable="OutsoleCodeColumn" msprop:Generator_UserColumnName="OutsoleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleSupplier" msprop:Generator_ColumnVarNameInTable="columnOutsoleSupplier" msprop:Generator_ColumnPropNameInRow="OutsoleSupplier" msprop:Generator_ColumnPropNameInTable="OutsoleSupplierColumn" msprop:Generator_UserColumnName="OutsoleSupplier" type="xs:string" minOccurs="0" />
+              <xs:element name="SizeNo" msprop:Generator_ColumnVarNameInTable="columnSizeNo" msprop:Generator_ColumnPropNameInRow="SizeNo" msprop:Generator_ColumnPropNameInTable="SizeNoColumn" msprop:Generator_UserColumnName="SizeNo" type="xs:string" minOccurs="0" />
+              <xs:element name="QuantityReject" msprop:Generator_ColumnVarNameInTable="columnQuantityReject" msprop:Generator_ColumnPropNameInRow="QuantityReject" msprop:Generator_ColumnPropNameInTable="QuantityRejectColumn" msprop:Generator_UserColumnName="QuantityReject" type="xs:int" minOccurs="0" />
+              <xs:element name="ETD" msprop:Generator_ColumnVarNameInTable="columnETD" msprop:Generator_ColumnPropNameInRow="ETD" msprop:Generator_ColumnPropNameInTable="ETDColumn" msprop:Generator_UserColumnName="ETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierETD" msprop:Generator_ColumnVarNameInTable="columnSupplierETD" msprop:Generator_ColumnPropNameInRow="SupplierETD" msprop:Generator_ColumnPropNameInTable="SupplierETDColumn" msprop:Generator_UserColumnName="SupplierETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SizeNoDouble" msprop:Generator_ColumnVarNameInTable="columnSizeNoDouble" msprop:Generator_ColumnPropNameInRow="SizeNoDouble" msprop:Generator_ColumnPropNameInTable="SizeNoDoubleColumn" msprop:Generator_UserColumnName="SizeNoDouble" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

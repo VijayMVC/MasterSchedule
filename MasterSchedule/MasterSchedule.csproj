@@ -1,0 +1,1640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7FED85D-E375-4FFB-A2A2-3103F134D2E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MasterSchedule</RootNamespace>
+    <AssemblyName>MasterSchedule</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\PhucNguyen\Desktop\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\InsockMaterialController.cs" />
+    <Compile Include="Controllers\InsockRawMaterialController.cs" />
+    <Compile Include="Controllers\InsockSuppliersController.cs" />
+    <Compile Include="Controllers\OutsoleMaterialDetailController.cs" />
+    <Compile Include="Controllers\OutsoleMaterialRackPositionController.cs" />
+    <Compile Include="Controllers\OutsoleMaterialRejectDetailController.cs" />
+    <Compile Include="Controllers\OutsoleMaterialRejectIssuesController.cs" />
+    <Compile Include="Controllers\OutsoleWHFGController.cs" />
+    <Compile Include="Controllers\ProductNoReviseController.cs" />
+    <Compile Include="Controllers\UpperComponentController.cs" />
+    <Compile Include="Controllers\UpperComponentMaterialController.cs" />
+    <Compile Include="Controllers\UpperComponentRawMaterialController.cs" />
+    <Compile Include="DataSets\LeadTimePerStyleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeadTimePerStyleDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LeadTimeReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeadTimeReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleMaterialDetailVarianceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleMaterialDetailVarianceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleMaterialRejectDetailDataSet.cs">
+      <DependentUpon>OutsoleMaterialRejectDetailDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleMaterialRejectDetailDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleMaterialRejectDetailDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleOutputBalanceDataSet.cs">
+      <DependentUpon>OutsoleOutputBalanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleOutputBalanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleOutputBalanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleWHAccumulatingDataSet.cs">
+      <DependentUpon>OutsoleWHAccumulatingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleWHAccumulatingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleWHAccumulatingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ExcelHelper.cs" />
+    <Compile Include="Models\InsockMaterialModel.cs" />
+    <Compile Include="Models\InsockRawMaterialModel.cs" />
+    <Compile Include="Models\InsockSuppliersModel.cs" />
+    <Compile Include="Models\OutsoleMaterialDetailModel.cs" />
+    <Compile Include="Models\OutsoleMaterialRackPositionModel.cs" />
+    <Compile Include="Models\OutsoleMaterialRejectDetailModel.cs" />
+    <Compile Include="Models\OutsoleMaterialRejectIssuesModel.cs" />
+    <Compile Include="Models\OutsoleWHFGModel.cs" />
+    <Compile Include="Models\ProductNoReviseModel.cs" />
+    <Compile Include="Models\UpperComponentMaterialModel.cs" />
+    <Compile Include="Models\UpperComponentModel.cs" />
+    <Compile Include="Models\UpperComponentRawMaterialModel.cs" />
+    <Compile Include="ViewModels\DelayShipmentViewModel.cs" />
+    <Compile Include="ViewModels\InsockRawMaterialViewModel.cs" />
+    <Compile Include="ViewModels\NoticeOutsoleWHInventoryViewModel.cs" />
+    <Compile Include="ViewModels\UpperComponentWHInventoryViewModel.cs" />
+    <Compile Include="ViewModels\UpperComponentRawMaterialViewModel.cs" />
+    <Compile Include="Views\AddOutsoleMaterialRackPositionWindow.xaml.cs">
+      <DependentUpon>AddOutsoleMaterialRackPositionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssemblyMasterFilterWindow.xaml.cs">
+      <DependentUpon>AssemblyMasterFilterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AssemblyMasterReportWindow.xaml.cs">
+      <DependentUpon>AssemblyMasterReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AssemblyMasterWindow.xaml.cs">
+      <DependentUpon>AssemblyMasterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AssemblyReleaseReportWindow.xaml.cs">
+      <DependentUpon>AssemblyReleaseReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AssemblyReleaseWindow.xaml.cs">
+      <DependentUpon>AssemblyReleaseWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\AssemblyScheduleDelayReportWindow.xaml.cs">
+      <DependentUpon>AssemblyScheduleDelayReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ChartScheduleWindow.xaml.cs">
+      <DependentUpon>ChartScheduleWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CompletionStatusWindow.xaml.cs">
+      <DependentUpon>CompletionStatusWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CutprepMasterFilterWindow.xaml.cs">
+      <DependentUpon>CutprepMasterFilterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CutprepMasterReportWindow.xaml.cs">
+      <DependentUpon>CutprepMasterReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ImportInsockRawMaterialWindow.xaml.cs">
+      <DependentUpon>ImportInsockRawMaterialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportUpperComponentEFDWindow.xaml.cs">
+      <DependentUpon>ImportUpperComponentEFDWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsockDeliveryDetailWindow.xaml.cs">
+      <DependentUpon>InsockDeliveryDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsockDeliveryWindow.xaml.cs">
+      <DependentUpon>InsockDeliveryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsockInputMaterialWindow.xaml.cs">
+      <DependentUpon>InsockInputMaterialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsockRawMaterialWindow.xaml.cs">
+      <DependentUpon>InsockRawMaterialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeadTimePerSectionWindow.xaml.cs">
+      <DependentUpon>LeadTimePerSectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeadTimerPerStyleWindow.xaml.cs">
+      <DependentUpon>LeadTimerPerStyleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleOutputBalanceReportWindow.xaml.cs">
+      <DependentUpon>OutsoleOutputBalanceReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleOutputBalanceWindow.xaml.cs">
+      <DependentUpon>OutsoleOutputBalanceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleInputMaterialDetailWindow.xaml.cs">
+      <DependentUpon>OutsoleInputMaterialDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleMaterialInputRejectDetailWindow.xaml.cs">
+      <DependentUpon>OutsoleMaterialInputRejectDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleWHAccumulatingReportWindow.xaml.cs">
+      <DependentUpon>OutsoleWHAccumulatingReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleMaterialDetailVarianceReportWindow.xaml.cs">
+      <DependentUpon>OutsoleMaterialDetailVarianceReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleWHFinishGoodsWindow.xaml.cs">
+      <DependentUpon>OutsoleWHFinishGoodsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateHistoryWindow.xaml.cs">
+      <DependentUpon>UpdateHistoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperComponentWHDeliveryDetailWindow.xaml.cs">
+      <DependentUpon>UpperComponentWHDeliveryDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperComponentWHDeliveryWindow.xaml.cs">
+      <DependentUpon>UpperComponentWHDeliveryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperComponentInputMaterialWindow.xaml.cs">
+      <DependentUpon>UpperComponentInputMaterialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperComponentWHInventoryDetailWindow.xaml.cs">
+      <DependentUpon>UpperComponentWHInventoryDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperComponentWHInventoryWindow.xaml.cs">
+      <DependentUpon>UpperComponentWHInventoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperComponentRawMaterialWindow.xaml.cs">
+      <DependentUpon>UpperComponentRawMaterialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpperDelayReportWindow.xaml.cs">
+      <DependentUpon>UpperDelayReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpperDeliveryReportWindow.xaml.cs">
+      <DependentUpon>UpperDeliveryReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpperDeliveryStatusWindow.xaml.cs">
+      <DependentUpon>UpperDeliveryStatusWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ImportAvailableMachineWindow.xaml.cs">
+      <DependentUpon>ImportAvailableMachineWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ImportMachineRequirementWindow.xaml.cs">
+      <DependentUpon>ImportMachineRequirementWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ImportOrdersWindow.xaml.cs">
+      <DependentUpon>ImportOrdersWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ImportOutsoleRawMaterialWindow.xaml.cs">
+      <DependentUpon>ImportOutsoleRawMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ImportSizeRunWindow.xaml.cs">
+      <DependentUpon>ImportSizeRunWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\InsertOffDayWindow.xaml.cs">
+      <DependentUpon>InsertOffDayWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MachineRequirementScheduleChartWindow.xaml.cs">
+      <DependentUpon>MachineRequirementScheduleChartWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleDelayReportWindow.xaml.cs">
+      <DependentUpon>OutsoleDelayReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleDeliveryReportWindow.xaml.cs">
+      <DependentUpon>OutsoleDeliveryReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleDeliveryStatusWindow.xaml.cs">
+      <DependentUpon>OutsoleDeliveryStatusWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleInputMaterialWindow.xaml.cs">
+      <DependentUpon>OutsoleInputMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleInputOutputWindow.xaml.cs">
+      <DependentUpon>OutsoleInputOutputWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleMasterFilterWindow.xaml.cs">
+      <DependentUpon>OutsoleMasterFilterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleMasterReportWindow.xaml.cs">
+      <DependentUpon>OutsoleMasterReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleMasterWindow.xaml.cs">
+      <DependentUpon>OutsoleMasterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleMaterialRejectReportWindow.xaml.cs">
+      <DependentUpon>OutsoleMaterialRejectReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleRawMaterialWindow.xaml.cs">
+      <DependentUpon>OutsoleRawMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleReleaseMaterialReportWindow.xaml.cs">
+      <DependentUpon>OutsoleReleaseMaterialReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleReleaseMaterialWindow.xaml.cs">
+      <DependentUpon>OutsoleReleaseMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleWHDeliveryDetailWindow.xaml.cs">
+      <DependentUpon>OutsoleWHDeliveryDetailWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleWHDeliveryWindow.xaml.cs">
+      <DependentUpon>OutsoleWHDeliveryWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OutsoleWHInventoryDetailWindow.xaml.cs">
+      <DependentUpon>OutsoleWHInventoryDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutsoleWHInventoryWindow.xaml.cs">
+      <DependentUpon>OutsoleWHInventoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductionMemoWindow.xaml.cs">
+      <DependentUpon>ProductionMemoWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\RawMaterialSearchBoxWindow.xaml.cs">
+      <DependentUpon>RawMaterialSearchBoxWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\RawMaterialWindow.xaml.cs">
+      <DependentUpon>RawMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SearchProductionMemoWindow.xaml.cs">
+      <DependentUpon>SearchProductionMemoWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SelectAssemblyReleaseWindow.xaml.cs">
+      <DependentUpon>SelectAssemblyReleaseWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SelectOutsoleReleaseMaterialWindow.xaml.cs">
+      <DependentUpon>SelectOutsoleReleaseMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SewingInputOutputWindow.xaml.cs">
+      <DependentUpon>SewingInputOutputWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SewingMasterFilterWindow.xaml.cs">
+      <DependentUpon>SewingMasterFilterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SewingMasterReportWindow.xaml.cs">
+      <DependentUpon>SewingMasterReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SewingMasterWindow.xaml.cs">
+      <DependentUpon>SewingMasterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SewingScheduleDelayReportWindow.xaml.cs">
+      <DependentUpon>SewingScheduleDelayReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SockliningMasterFilterWindow.xaml.cs">
+      <DependentUpon>SockliningMasterFilterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SockliningMasterReportWindow.xaml.cs">
+      <DependentUpon>SockliningMasterReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SockliningMasterWindow.xaml.cs">
+      <DependentUpon>SockliningMasterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateAssemblyReleaseWindow.xaml.cs">
+      <DependentUpon>UpdateAssemblyReleaseWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateAvailableMachineWindow.xaml.cs">
+      <DependentUpon>UpdateAvailableMachineWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateMachineRequirementWindow.xaml.cs">
+      <DependentUpon>UpdateMachineRequirementWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateOrdersWindow.xaml.cs">
+      <DependentUpon>UpdateOrdersWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateOutsoleReleaseMaterialWindow.xaml.cs">
+      <DependentUpon>UpdateOutsoleReleaseMaterialWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpperWHInventoryDetailReportWindow.xaml.cs">
+      <DependentUpon>UpperWHInventoryDetailReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpperWHInventoryDetailWindow.xaml.cs">
+      <DependentUpon>UpperWHInventoryDetailWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpperWHInventoryReportWindow.xaml.cs">
+      <DependentUpon>UpperWHInventoryReportWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UpperWHInventoryWindow.xaml.cs">
+      <DependentUpon>UpperWHInventoryWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssemblyMasterController.cs" />
+    <Compile Include="Controllers\AssemblyReleaseController.cs" />
+    <Compile Include="Controllers\AvailableMachineController.cs" />
+    <Compile Include="Controllers\MachineRequirementController.cs" />
+    <Compile Include="Controllers\OrderExtraController.cs" />
+    <Compile Include="Controllers\ProductionMemoController.cs" />
+    <Compile Include="Controllers\SockliningMasterController.cs" />
+    <Compile Include="Controllers\OutsoleOutputController.cs" />
+    <Compile Include="Controllers\OutsoleMasterController.cs" />
+    <Compile Include="Controllers\SewingMasterController.cs" />
+    <Compile Include="Controllers\SewingOutputController.cs" />
+    <Compile Include="Controllers\MaterialTypeController.cs" />
+    <Compile Include="Controllers\OffDayController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\OutsoleMaterialController.cs" />
+    <Compile Include="Controllers\OutsoleRawMaterialController.cs" />
+    <Compile Include="Controllers\OutsoleReleaseMaterialController.cs" />
+    <Compile Include="Controllers\OutsoleSuppliersController.cs" />
+    <Compile Include="Controllers\RawMaterialController.cs" />
+    <Compile Include="Controllers\SizeRunController.cs" />
+    <Compile Include="DataSets\Customs\CustomDataGrid.cs" />
+    <Compile Include="DataSets\AssemblyMasterDataSet.cs">
+      <DependentUpon>AssemblyMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\AssemblyMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\AssemblyReleaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyReleaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\AssemblyScheduleDelayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyScheduleDelayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CutprepMasterDataSet.cs">
+      <DependentUpon>CutprepMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CutprepMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CutprepMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleWHInventoryDetailDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleWHInventoryDetailDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DelayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DelayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\UpperWHInventoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpperWHInventoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DeliveryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeliveryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleDelayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleDelayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleDeliveryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleDeliveryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleMaterialRejectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleMaterialRejectDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\OutsoleReleaseMaterialDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutsoleReleaseMaterialDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SewingMasterDataSet.cs">
+      <DependentUpon>SewingMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SewingMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SewingMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SewingScheduleDelayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SewingScheduleDelayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SockliningMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SockliningMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\UpperWHInventoryDetailDataSet.cs">
+      <DependentUpon>UpperWHInventoryDetailDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\UpperWHInventoryDetailDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpperWHInventoryDetailDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SaovietMasterScheduleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaovietMasterScheduleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApplicationRunningHelper.cs" />
+    <Compile Include="Helpers\AssemblyHelper.cs" />
+    <Compile Include="Helpers\CalculateHelper.cs" />
+    <Compile Include="Helpers\ConvertJPGHelper.cs" />
+    <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\TimeHelper.cs" />
+    <Compile Include="Helpers\MatchingHelper.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\AssemblyMasterModel.cs" />
+    <Compile Include="Models\AssemblyReleaseModel.cs" />
+    <Compile Include="Models\AvailableMachineModel.cs" />
+    <Compile Include="Models\AvailableWorker.cs" />
+    <Compile Include="Models\MachineRequirementModel.cs" />
+    <Compile Include="Models\OrderExtraModel.cs" />
+    <Compile Include="Models\ProductionMemoModel.cs" />
+    <Compile Include="Models\SectionModel.cs" />
+    <Compile Include="ViewModels\AssemblyMasterExportViewModel.cs" />
+    <Compile Include="ViewModels\CompletionStatusViewModel.cs" />
+    <Compile Include="ViewModels\MachineRequirementAssemblyViewModel.cs" />
+    <Compile Include="ViewModels\MachineRequirementCuttingViewModel.cs" />
+    <Compile Include="ViewModels\MachineRequirementPrepViewModel.cs" />
+    <Compile Include="ViewModels\MachineRequirementSewingViewModel.cs" />
+    <Compile Include="ViewModels\MachineRequirementStockfitViewModel.cs" />
+    <Compile Include="ViewModels\OutsoleDeliveryStatusViewModel.cs" />
+    <Compile Include="ViewModels\DeliveryStatusViewModel.cs" />
+    <Compile Include="ViewModels\OutsoleWHInventoryDetailViewModel.cs" />
+    <Compile Include="ViewModels\UpperWHInventoryDetailViewModel.cs" />
+    <Compile Include="ViewModels\SockliningMasterExportViewModel.cs" />
+    <Compile Include="ViewModels\OutsoleMasterExportViewModel.cs" />
+    <Compile Include="ViewModels\CutprepMasterExportViewModel.cs" />
+    <Compile Include="ViewModels\ETDFilterViewModel.cs" />
+    <Compile Include="ViewModels\SewingMasterExportViewModel.cs" />
+    <Compile Include="ViewModels\LineFilterViewModel.cs" />
+    <Compile Include="Models\SockliningMasterModel.cs" />
+    <Compile Include="Models\OutsoleOutputModel.cs" />
+    <Compile Include="Models\OutsoleMasterModel.cs" />
+    <Compile Include="Models\SewingMasterModel.cs" />
+    <Compile Include="Models\SewingOutputModel.cs" />
+    <Compile Include="Models\OffDayModel.cs" />
+    <Compile Include="Models\RawMaterialCellChangedModel.cs" />
+    <Compile Include="Models\MaterialTypeModel.cs" />
+    <Compile Include="Models\OrdersModel.cs" />
+    <Compile Include="Models\OutsoleMaterialModel.cs" />
+    <Compile Include="Models\OutsoleRawMaterialModel.cs" />
+    <Compile Include="Models\OutsoleReleaseMaterialModel.cs" />
+    <Compile Include="Models\OutsoleSupplierColumnModel.cs" />
+    <Compile Include="Models\OutsoleSuppliersModel.cs" />
+    <Compile Include="Models\RawMaterialModel.cs" />
+    <Compile Include="Models\SizeRunModel.cs" />
+    <Compile Include="ViewModels\AssemblyMasterViewModel.cs" />
+    <Compile Include="ViewModels\SockliningMasterViewModel.cs" />
+    <Compile Include="ViewModels\MaterialArrivalViewModel.cs" />
+    <Compile Include="ViewModels\OutsoleMasterViewModel.cs" />
+    <Compile Include="ViewModels\OutsoleRawMaterialViewModel.cs" />
+    <Compile Include="ViewModels\OutsoleWHInventoryViewModel.cs" />
+    <Compile Include="ViewModels\RawMaterialViewModel.cs" />
+    <Compile Include="ViewModels\SewingMasterViewModel.cs" />
+    <Compile Include="ViewModels\UpperWHInventoryViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\AddOutsoleMaterialRackPositionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyMasterFilterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyMasterReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyMasterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyReleaseReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyReleaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyScheduleDelayReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChartScheduleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CompletionStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CutprepMasterFilterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CutprepMasterReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportInsockRawMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportUpperComponentEFDWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InsockDeliveryDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InsockDeliveryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InsockInputMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InsockRawMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LeadTimePerSectionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LeadTimerPerStyleWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OutsoleOutputBalanceReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleOutputBalanceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleInputMaterialDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleMaterialInputRejectDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleWHAccumulatingReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleMaterialDetailVarianceReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleWHFinishGoodsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateHistoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperComponentWHDeliveryDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperComponentWHDeliveryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperComponentInputMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperComponentWHInventoryDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperComponentWHInventoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperComponentRawMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperDelayReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperDeliveryReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperDeliveryStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportAvailableMachineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportMachineRequirementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportOrdersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportOutsoleRawMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportSizeRunWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InsertOffDayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MachineRequirementScheduleChartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleDelayReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleDeliveryReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleDeliveryStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleInputMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleInputOutputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleMasterFilterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleMasterReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleMasterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleMaterialRejectReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleRawMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleReleaseMaterialReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleReleaseMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleWHDeliveryDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleWHDeliveryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleWHInventoryDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutsoleWHInventoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductionMemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawMaterialSearchBoxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchProductionMemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectAssemblyReleaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectOutsoleReleaseMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SewingInputOutputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SewingMasterFilterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SewingMasterReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SewingMasterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SewingScheduleDelayReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SockliningMasterFilterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SockliningMasterReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SockliningMasterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateAssemblyReleaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateAvailableMachineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateMachineRequirementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateOrdersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateOutsoleReleaseMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperWHInventoryDetailReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperWHInventoryDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperWHInventoryReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpperWHInventoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssemblyMasterReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssemblyReleaseReport.rdlc" />
+    <EmbeddedResource Include="Reports\AssemblyReleaseReport_TL.rdlc" />
+    <EmbeddedResource Include="Reports\AssemblyScheduleDelayReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DelayReport.rdlc" />
+    <EmbeddedResource Include="Reports\DeliveryReport.rdlc" />
+    <EmbeddedResource Include="Reports\LeadTimePerStyleReport.rdlc" />
+    <EmbeddedResource Include="Reports\LeadTimeSectionReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleDelayReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleMaterialDetailVarianceReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleMaterialRejectDetailReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleOutputBalanceReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleWHAccumulatingReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OutsoleWHInventoryDetailReport.rdlc" />
+    <EmbeddedResource Include="Reports\SewingScheduleDelayReport.rdlc" />
+    <EmbeddedResource Include="Reports\SockliningMasterReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OutsoleMasterReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CutprepMasterReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SewingMasterReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OutsoleMaterialRejectReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleDeliveryReport.rdlc" />
+    <EmbeddedResource Include="Reports\OutsoleReleaseMaterialReport.rdlc" />
+    <EmbeddedResource Include="Reports\UpperWHInventoryDetailReport.rdlc" />
+    <EntityDeploy Include="Entities\SaovietMasterScheduleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SaovietMasterScheduleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\AssemblyMasterDataSet.xsc">
+      <DependentUpon>AssemblyMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AssemblyMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssemblyMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AssemblyMasterDataSet.xss">
+      <DependentUpon>AssemblyMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AssemblyReleaseDataSet.xsc">
+      <DependentUpon>AssemblyReleaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AssemblyReleaseDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssemblyReleaseDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AssemblyReleaseDataSet.xss">
+      <DependentUpon>AssemblyReleaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AssemblyScheduleDelayDataSet.xsc">
+      <DependentUpon>AssemblyScheduleDelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AssemblyScheduleDelayDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssemblyScheduleDelayDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AssemblyScheduleDelayDataSet.xss">
+      <DependentUpon>AssemblyScheduleDelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CutprepMasterDataSet.xsc">
+      <DependentUpon>CutprepMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CutprepMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CutprepMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\CutprepMasterDataSet.xss">
+      <DependentUpon>CutprepMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LeadTimePerStyleDataSet.xsc">
+      <DependentUpon>LeadTimePerStyleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LeadTimePerStyleDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LeadTimePerStyleDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LeadTimePerStyleDataSet.xss">
+      <DependentUpon>LeadTimePerStyleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LeadTimeReportDataSet.xsc">
+      <DependentUpon>LeadTimeReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LeadTimeReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LeadTimeReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LeadTimeReportDataSet.xss">
+      <DependentUpon>LeadTimeReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMaterialDetailVarianceDataSet.xsc">
+      <DependentUpon>OutsoleMaterialDetailVarianceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMaterialDetailVarianceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleMaterialDetailVarianceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleMaterialDetailVarianceDataSet.xss">
+      <DependentUpon>OutsoleMaterialDetailVarianceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMaterialRejectDetailDataSet.xsc">
+      <DependentUpon>OutsoleMaterialRejectDetailDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMaterialRejectDetailDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleMaterialRejectDetailDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleMaterialRejectDetailDataSet.xss">
+      <DependentUpon>OutsoleMaterialRejectDetailDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleOutputBalanceDataSet.xsc">
+      <DependentUpon>OutsoleOutputBalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleOutputBalanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleOutputBalanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleOutputBalanceDataSet.xss">
+      <DependentUpon>OutsoleOutputBalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleWHAccumulatingDataSet.xsc">
+      <DependentUpon>OutsoleWHAccumulatingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleWHAccumulatingDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleWHAccumulatingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleWHAccumulatingDataSet.xss">
+      <DependentUpon>OutsoleWHAccumulatingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleWHInventoryDetailDataSet.xsc">
+      <DependentUpon>OutsoleWHInventoryDetailDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleWHInventoryDetailDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleWHInventoryDetailDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleWHInventoryDetailDataSet.xss">
+      <DependentUpon>OutsoleWHInventoryDetailDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DelayDataSet.xsc">
+      <DependentUpon>DelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DelayDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DelayDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DelayDataSet.xss">
+      <DependentUpon>DelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UpperWHInventoryDataSet.xsc">
+      <DependentUpon>UpperWHInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UpperWHInventoryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpperWHInventoryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\UpperWHInventoryDataSet.xss">
+      <DependentUpon>UpperWHInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DeliveryDataSet.xsc">
+      <DependentUpon>DeliveryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DeliveryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeliveryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DeliveryDataSet.xss">
+      <DependentUpon>DeliveryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleDelayDataSet.xsc">
+      <DependentUpon>OutsoleDelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleDelayDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleDelayDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleDelayDataSet.xss">
+      <DependentUpon>OutsoleDelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleDeliveryDataSet.xsc">
+      <DependentUpon>OutsoleDeliveryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleDeliveryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleDeliveryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleDeliveryDataSet.xss">
+      <DependentUpon>OutsoleDeliveryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMasterDataSet.xsc">
+      <DependentUpon>OutsoleMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleMasterDataSet.xss">
+      <DependentUpon>OutsoleMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMaterialRejectDataSet.xsc">
+      <DependentUpon>OutsoleMaterialRejectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleMaterialRejectDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleMaterialRejectDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleMaterialRejectDataSet.xss">
+      <DependentUpon>OutsoleMaterialRejectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleReleaseMaterialDataSet.xsc">
+      <DependentUpon>OutsoleReleaseMaterialDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\OutsoleReleaseMaterialDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutsoleReleaseMaterialDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\OutsoleReleaseMaterialDataSet.xss">
+      <DependentUpon>OutsoleReleaseMaterialDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SewingMasterDataSet.xsc">
+      <DependentUpon>SewingMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SewingMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SewingMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\SewingMasterDataSet.xss">
+      <DependentUpon>SewingMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SewingScheduleDelayDataSet.xsc">
+      <DependentUpon>SewingScheduleDelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SewingScheduleDelayDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SewingScheduleDelayDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\SewingScheduleDelayDataSet.xss">
+      <DependentUpon>SewingScheduleDelayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SockliningMasterDataSet.xsc">
+      <DependentUpon>SockliningMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SockliningMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SockliningMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\SockliningMasterDataSet.xss">
+      <DependentUpon>SockliningMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UpperWHInventoryDetailDataSet.xsc">
+      <DependentUpon>UpperWHInventoryDetailDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UpperWHInventoryDetailDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpperWHInventoryDetailDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\UpperWHInventoryDetailDataSet.xss">
+      <DependentUpon>UpperWHInventoryDetailDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Packages.Config" />
+    <None Include="Properties\DataSources\App.datasource" />
+    <None Include="Properties\DataSources\MainWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.AccountController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.AssemblyMasterController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.AssemblyReleaseController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.AvailableMachineController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.MachineRequirementController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.MaterialTypeController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OffDayController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OrderExtraController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OrdersController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OutsoleMasterController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OutsoleMaterialController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OutsoleOutputController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OutsoleRawMaterialController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OutsoleReleaseMaterialController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.OutsoleSuppliersController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.ProductionMemoController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.RawMaterialController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.SewingMasterController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.SewingOutputController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.SizeRunController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Controllers.SockliningMasterController.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Customs.ClipboardHelper+ParseFormat.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Customs.ClipboardHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Customs.CustomDataGrid.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyMasterDataSet+AssemblyMasterTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyMasterDataSet+AssemblyMasterTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyMasterDataSet+AssemblyMasterTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyMasterDataSet+AssemblyMasterTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyMasterDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyReleaseDataSet+AssemblyReleaseTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyReleaseDataSet+AssemblyReleaseTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyReleaseDataSet+AssemblyReleaseTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyReleaseDataSet+AssemblyReleaseTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyReleaseDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyScheduleDelayDataSet+AssemblyScheduleDelayTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyScheduleDelayDataSet+AssemblyScheduleDelayTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyScheduleDelayDataSet+AssemblyScheduleDelayTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyScheduleDelayDataSet+AssemblyScheduleDelayTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.AssemblyScheduleDelayDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.CutprepMasterDataSet+CutprepMasterTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.CutprepMasterDataSet+CutprepMasterTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.CutprepMasterDataSet+CutprepMasterTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.CutprepMasterDataSet+CutprepMasterTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.CutprepMasterDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DataSet1+OutsoleInventoryDetailTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DataSet1+OutsoleInventoryDetailTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DataSet1+OutsoleInventoryDetailTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DataSet1+OutsoleInventoryDetailTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DataSet1.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet+DelayTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet+DelayTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet+DelayTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet+DelayTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet_V1+DelayDataTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet_V1+DelayDataTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet_V1+DelayDataTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet_V1+DelayDataTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DelayDataSet_V1.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DeliveryDataSet+DeliveryTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DeliveryDataSet+DeliveryTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DeliveryDataSet+DeliveryTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DeliveryDataSet+DeliveryTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.DeliveryDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimePerStyleDataSet+LeadTimePerStyleTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimePerStyleDataSet+LeadTimePerStyleTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimePerStyleDataSet+LeadTimePerStyleTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimePerStyleDataSet+LeadTimePerStyleTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimePerStyleDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimeReportDataSet+LeadTimeTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimeReportDataSet+LeadTimeTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimeReportDataSet+LeadTimeTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimeReportDataSet+LeadTimeTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.LeadTimeReportDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDelayDataSet+OutsoleDelayTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDelayDataSet+OutsoleDelayTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDelayDataSet+OutsoleDelayTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDelayDataSet+OutsoleDelayTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDelayDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDelayDataSet_1.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDeliveryDataSet+OutsoleDeliveryTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDeliveryDataSet+OutsoleDeliveryTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDeliveryDataSet+OutsoleDeliveryTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDeliveryDataSet+OutsoleDeliveryTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleDeliveryDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMasterDataSet+OutsoleMasterTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMasterDataSet+OutsoleMasterTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMasterDataSet+OutsoleMasterTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMasterDataSet+OutsoleMasterTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMasterDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialDetailVarianceDataSet+OutsoleMaterialDetailVarianceTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialDetailVarianceDataSet+OutsoleMaterialDetailVarianceTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialDetailVarianceDataSet+OutsoleMaterialDetailVarianceTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialDetailVarianceDataSet+OutsoleMaterialDetailVarianceTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialDetailVarianceDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDataSet+OutsoleMaterialRejectTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDataSet+OutsoleMaterialRejectTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDataSet+OutsoleMaterialRejectTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDataSet+OutsoleMaterialRejectTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDetailDataSet+OutsoleMaterialRejectDetailTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDetailDataSet+OutsoleMaterialRejectDetailTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDetailDataSet+OutsoleMaterialRejectDetailTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDetailDataSet+OutsoleMaterialRejectDetailTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleMaterialRejectDetailDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleOutputBalanceDataSet+OutsoleOutputBalanceTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleOutputBalanceDataSet+OutsoleOutputBalanceTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleOutputBalanceDataSet+OutsoleOutputBalanceTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleOutputBalanceDataSet+OutsoleOutputBalanceTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleOutputBalanceDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleReleaseMaterialDataSet+OutsoleReleaseMaterialTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleReleaseMaterialDataSet+OutsoleReleaseMaterialTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleReleaseMaterialDataSet+OutsoleReleaseMaterialTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleReleaseMaterialDataSet+OutsoleReleaseMaterialTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleReleaseMaterialDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleWHAccumulatingDataSet+OutsoleWHAccumulatingTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleWHAccumulatingDataSet+OutsoleWHAccumulatingTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleWHAccumulatingDataSet+OutsoleWHAccumulatingTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleWHAccumulatingDataSet+OutsoleWHAccumulatingTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutsoleWHAccumulatingDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutSoleWHInventoryDetailDataSet+OutSoleWHInventoryDetailTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutSoleWHInventoryDetailDataSet+OutSoleWHInventoryDetailTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutSoleWHInventoryDetailDataSet+OutSoleWHInventoryDetailTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutSoleWHInventoryDetailDataSet+OutSoleWHInventoryDetailTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.OutSoleWHInventoryDetailDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingMasterDataSet+SewingMasterTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingMasterDataSet+SewingMasterTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingMasterDataSet+SewingMasterTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingMasterDataSet+SewingMasterTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingMasterDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingScheduleDelayDataSet+SewingScheduleDelayTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingScheduleDelayDataSet+SewingScheduleDelayTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingScheduleDelayDataSet+SewingScheduleDelayTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingScheduleDelayDataSet+SewingScheduleDelayTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SewingScheduleDelayDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SockliningMasterDataSet+SockliningMasterTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SockliningMasterDataSet+SockliningMasterTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SockliningMasterDataSet+SockliningMasterTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SockliningMasterDataSet+SockliningMasterTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.SockliningMasterDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.testcolumn.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDataSet+UpperWHInventoryTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDataSet+UpperWHInventoryTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDataSet+UpperWHInventoryTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDataSet+UpperWHInventoryTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDetailDataSet+UpperWHInventoryDetailTableDataTable.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDetailDataSet+UpperWHInventoryDetailTableRow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDetailDataSet+UpperWHInventoryDetailTableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDetailDataSet+UpperWHInventoryDetailTableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.DataSets.UpperWHInventoryDetailDataSet.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Entities.SaovietMasterScheduleEntities.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.ApplicationRunningHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.AssemblyHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.CalculateHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.ConvertJPGHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.DatabaseHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.MatchingHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.StringHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Helpers.TimeHelper.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.AccountModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.AssemblyMasterModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.AssemblyReleaseModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.AvailableMachineModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.MachineRequirementModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.MaterialTypeModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OffDayModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OrderExtraModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OrdersModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleMasterModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleMaterialModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleOutputModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleRawMaterialModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleReleaseMaterialModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleSupplierColumnModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.OutsoleSuppliersModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.ProductionMemoModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.RawMaterialCellChangedModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.RawMaterialModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.SectionModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.SewingMasterModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.SewingOutputModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.SizeRunModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Models.SockliningMasterModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.AssemblyMasterExportViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.AssemblyMasterViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.CompletionStatusViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.CutprepMasterExportViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.DeliveryStatusViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.ETDFilterViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.LineFilterViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.MachineRequirementAssemblyViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.MachineRequirementCuttingViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.MachineRequirementPrepViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.MachineRequirementSewingViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.MachineRequirementStockfitViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.MaterialArrivalViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.OutsoleDeliveryStatusViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.OutsoleMasterExportViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.OutsoleMasterViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.OutsoleRawMaterialViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.OutsoleWHInventoryDetailViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.OutsoleWHInventoryViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.RawMaterialViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.SewingMasterExportViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.SewingMasterViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.SockliningMasterExportViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.SockliningMasterViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.UpperWHInventoryDetailViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.ViewModels.UpperWHInventoryViewModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.AssemblyMasterFilterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.AssemblyMasterReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.AssemblyMasterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.AssemblyReleaseReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.AssemblyReleaseWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.AssemblyScheduleDelayReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ChartScheduleWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.CompletionStatusWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.CutprepMasterFilterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.CutprepMasterReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.DelayReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.DeliveryReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.DeliveryStatusWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ImportAvailableMachineWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ImportMachineRequirementWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ImportOrdersWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ImportOutsoleRawMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ImportSizeRunWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.InsertOffDayWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.LoginWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.MachineRequirementScheduleChartWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleDelayReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleDeliveryReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleDeliveryStatusWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleInputMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleInputOutputWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleMasterFilterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleMasterReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleMasterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleMaterialRejectReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleRawMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleReleaseMaterialReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleReleaseMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutSoleWHInventoryDetailReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleWHInventoryDetailWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.OutsoleWHInventoryWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ProductionMemoWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.ProductionNumberModel.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.RawMaterialSearchBoxWindow+GetString.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.RawMaterialSearchBoxWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.RawMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SearchProductionMemoWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SelectAssemblyReleaseWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SelectOutsoleReleaseMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SewingInputOutputWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SewingMasterFilterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SewingMasterReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SewingMasterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SewingScheduleDelayReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SockliningMasterFilterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SockliningMasterReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.SockliningMasterWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpdateAssemblyReleaseWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpdateAvailableMachineWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpdateMachineRequirementWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpdateOrdersWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpdateOutsoleReleaseMaterialWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpperWHInventoryDetailReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpperWHInventoryDetailWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpperWHInventoryReportWindow.datasource" />
+    <None Include="Properties\DataSources\MasterSchedule.Views.UpperWHInventoryWindow.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

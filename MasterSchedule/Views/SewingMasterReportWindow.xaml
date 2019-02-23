@@ -1,0 +1,11 @@
+﻿<Window xmlns:rpv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.Reportviewer.WinForms" 
+        x:Class="MasterSchedule.Views.SewingMasterReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Master Schedule - Print Sewing Master" Height="300" Width="450" WindowState="Maximized" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <WindowsFormsHost>
+            <rpv:ReportViewer x:Name="reportViewer" ShowFindControls="False"/>
+        </WindowsFormsHost>
+    </Grid>
+</Window>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AssemblyMasterDataSet" targetNamespace="http://tempuri.org/AssemblyMasterDataSet.xsd" xmlns:mstns="http://tempuri.org/AssemblyMasterDataSet.xsd" xmlns="http://tempuri.org/AssemblyMasterDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AssemblyMasterDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AssemblyMasterDataSet" msprop:Generator_UserDSName="AssemblyMasterDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AssemblyMasterTable" msprop:Generator_TableClassName="AssemblyMasterTableDataTable" msprop:Generator_TableVarName="tableAssemblyMasterTable" msprop:Generator_TablePropName="AssemblyMasterTable" msprop:Generator_RowDeletingName="AssemblyMasterTableRowDeleting" msprop:Generator_RowChangingName="AssemblyMasterTableRowChanging" msprop:Generator_RowEvHandlerName="AssemblyMasterTableRowChangeEventHandler" msprop:Generator_RowDeletedName="AssemblyMasterTableRowDeleted" msprop:Generator_UserTableName="AssemblyMasterTable" msprop:Generator_RowChangedName="AssemblyMasterTableRowChanged" msprop:Generator_RowEvArgName="AssemblyMasterTableRowChangeEvent" msprop:Generator_RowClassName="AssemblyMasterTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sequence" msprop:Generator_ColumnVarNameInTable="columnSequence" msprop:Generator_ColumnPropNameInRow="Sequence" msprop:Generator_ColumnPropNameInTable="SequenceColumn" msprop:Generator_UserColumnName="Sequence" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductNo" msprop:Generator_ColumnVarNameInTable="columnProductNo" msprop:Generator_ColumnPropNameInRow="ProductNo" msprop:Generator_ColumnPropNameInTable="ProductNoColumn" msprop:Generator_UserColumnName="ProductNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Country" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInRow="Country" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_UserColumnName="Country" type="xs:string" minOccurs="0" />
+              <xs:element name="ShoeName" msprop:Generator_ColumnVarNameInTable="columnShoeName" msprop:Generator_ColumnPropNameInRow="ShoeName" msprop:Generator_ColumnPropNameInTable="ShoeNameColumn" msprop:Generator_UserColumnName="ShoeName" type="xs:string" minOccurs="0" />
+              <xs:element name="ArticleNo" msprop:Generator_ColumnVarNameInTable="columnArticleNo" msprop:Generator_ColumnPropNameInRow="ArticleNo" msprop:Generator_ColumnPropNameInTable="ArticleNoColumn" msprop:Generator_UserColumnName="ArticleNo" type="xs:string" minOccurs="0" />
+              <xs:element name="LastCode" msprop:Generator_ColumnVarNameInTable="columnLastCode" msprop:Generator_ColumnPropNameInRow="LastCode" msprop:Generator_ColumnPropNameInTable="LastCodeColumn" msprop:Generator_UserColumnName="LastCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="ETD" msprop:Generator_ColumnVarNameInTable="columnETD" msprop:Generator_ColumnPropNameInRow="ETD" msprop:Generator_ColumnPropNameInTable="ETDColumn" msprop:Generator_UserColumnName="ETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AssemblyLine" msprop:Generator_ColumnVarNameInTable="columnAssemblyLine" msprop:Generator_ColumnPropNameInRow="AssemblyLine" msprop:Generator_ColumnPropNameInTable="AssemblyLineColumn" msprop:Generator_UserColumnName="AssemblyLine" type="xs:string" minOccurs="0" />
+              <xs:element name="SewingStartDate" msprop:Generator_ColumnVarNameInTable="columnSewingStartDate" msprop:Generator_ColumnPropNameInRow="SewingStartDate" msprop:Generator_ColumnPropNameInTable="SewingStartDateColumn" msprop:Generator_UserColumnName="SewingStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SewingFinishDate" msprop:Generator_ColumnVarNameInTable="columnSewingFinishDate" msprop:Generator_ColumnPropNameInRow="SewingFinishDate" msprop:Generator_ColumnPropNameInTable="SewingFinishDateColumn" msprop:Generator_UserColumnName="SewingFinishDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OutsoleMatsArrival" msprop:Generator_ColumnVarNameInTable="columnOutsoleMatsArrival" msprop:Generator_ColumnPropNameInRow="OutsoleMatsArrival" msprop:Generator_ColumnPropNameInTable="OutsoleMatsArrivalColumn" msprop:Generator_UserColumnName="OutsoleMatsArrival" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblyMatsArrival" msprop:Generator_ColumnVarNameInTable="columnAssemblyMatsArrival" msprop:Generator_ColumnPropNameInRow="AssemblyMatsArrival" msprop:Generator_ColumnPropNameInTable="AssemblyMatsArrivalColumn" msprop:Generator_UserColumnName="AssemblyMatsArrival" type="xs:string" minOccurs="0" />
+              <xs:element name="CartonMatsArrival" msprop:Generator_ColumnVarNameInTable="columnCartonMatsArrival" msprop:Generator_ColumnPropNameInRow="CartonMatsArrival" msprop:Generator_ColumnPropNameInTable="CartonMatsArrivalColumn" msprop:Generator_UserColumnName="CartonMatsArrival" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblyStartDate" msprop:Generator_ColumnVarNameInTable="columnAssemblyStartDate" msprop:Generator_ColumnPropNameInRow="AssemblyStartDate" msprop:Generator_ColumnPropNameInTable="AssemblyStartDateColumn" msprop:Generator_UserColumnName="AssemblyStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AssemblyFinishDate" msprop:Generator_ColumnVarNameInTable="columnAssemblyFinishDate" msprop:Generator_ColumnPropNameInRow="AssemblyFinishDate" msprop:Generator_ColumnPropNameInTable="AssemblyFinishDateColumn" msprop:Generator_UserColumnName="AssemblyFinishDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AssemblyQuota" msprop:Generator_ColumnVarNameInTable="columnAssemblyQuota" msprop:Generator_ColumnPropNameInRow="AssemblyQuota" msprop:Generator_ColumnPropNameInTable="AssemblyQuotaColumn" msprop:Generator_UserColumnName="AssemblyQuota" type="xs:int" minOccurs="0" />
+              <xs:element name="SewingBalance" msprop:Generator_ColumnVarNameInTable="columnSewingBalance" msprop:Generator_ColumnPropNameInRow="SewingBalance" msprop:Generator_ColumnPropNameInTable="SewingBalanceColumn" msprop:Generator_UserColumnName="SewingBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="OutsoleBalance" msprop:Generator_ColumnVarNameInTable="columnOutsoleBalance" msprop:Generator_ColumnPropNameInRow="OutsoleBalance" msprop:Generator_ColumnPropNameInTable="OutsoleBalanceColumn" msprop:Generator_UserColumnName="OutsoleBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="InsoleBalance" msprop:Generator_ColumnVarNameInTable="columnInsoleBalance" msprop:Generator_ColumnPropNameInRow="InsoleBalance" msprop:Generator_ColumnPropNameInTable="InsoleBalanceColumn" msprop:Generator_UserColumnName="InsoleBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="InsockBalance" msprop:Generator_ColumnVarNameInTable="columnInsockBalance" msprop:Generator_ColumnPropNameInRow="InsockBalance" msprop:Generator_ColumnPropNameInTable="InsockBalanceColumn" msprop:Generator_UserColumnName="InsockBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblyBalance" msprop:Generator_ColumnVarNameInTable="columnAssemblyBalance" msprop:Generator_ColumnPropNameInRow="AssemblyBalance" msprop:Generator_ColumnPropNameInTable="AssemblyBalanceColumn" msprop:Generator_UserColumnName="AssemblyBalance" type="xs:string" minOccurs="0" />
+              <xs:element name="IsAssemblyMatsArrivalOk" msprop:Generator_ColumnVarNameInTable="columnIsAssemblyMatsArrivalOk" msprop:Generator_ColumnPropNameInRow="IsAssemblyMatsArrivalOk" msprop:Generator_ColumnPropNameInTable="IsAssemblyMatsArrivalOkColumn" msprop:Generator_UserColumnName="IsAssemblyMatsArrivalOk" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsOutsoleMatsArrivalOk" msprop:Generator_ColumnVarNameInTable="columnIsOutsoleMatsArrivalOk" msprop:Generator_ColumnPropNameInRow="IsOutsoleMatsArrivalOk" msprop:Generator_ColumnPropNameInTable="IsOutsoleMatsArrivalOkColumn" msprop:Generator_UserColumnName="IsOutsoleMatsArrivalOk" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsHaveMemo" msprop:Generator_ColumnVarNameInTable="columnIsHaveMemo" msprop:Generator_ColumnPropNameInRow="IsHaveMemo" msprop:Generator_ColumnPropNameInTable="IsHaveMemoColumn" msprop:Generator_UserColumnName="IsHaveMemo" type="xs:boolean" minOccurs="0" />
+              <xs:element name="LoadingDate" msprop:Generator_ColumnVarNameInTable="columnLoadingDate" msprop:Generator_ColumnPropNameInRow="LoadingDate" msprop:Generator_ColumnPropNameInTable="LoadingDateColumn" msprop:Generator_UserColumnName="LoadingDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

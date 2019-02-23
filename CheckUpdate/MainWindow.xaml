@@ -1,0 +1,8 @@
+﻿<Window x:Class="CheckUpdate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Check Update for Master Schedule" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="CanMinimize" Loaded="Window_Loaded">
+    <Grid>
+        <TextBlock Text="Checking..." TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+    </Grid>
+</Window>

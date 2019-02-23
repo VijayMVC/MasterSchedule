@@ -1,0 +1,118 @@
+﻿<Window x:Class="MasterSchedule.Views.OutsoleMasterFilterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MasterSchedule.Customs"
+        Title="Master Schedule - Print Outsole Master" Height="640" Width="Auto"
+         WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Popup x:Name="popupLine" PlacementTarget="{Binding ElementName=btnLine}" AllowsTransparency="True" PopupAnimation="Slide" IsOpen="False"
+               StaysOpen="False">
+            <Border BorderBrush="Gray" BorderThickness="1,1,1,1" Background="White">
+                <Grid Margin="5,5,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="lvLine" Width="200" Height="200">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="10,5,0,0">
+                                    <CheckBox IsChecked="{Binding IsSelected}" Checked="chbIsSelected_Checked" Unchecked="chbIsSelected_Checked" Content="{Binding Content}" IsThreeState="{Binding IsRoot}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                        <Button x:Name="btnOK" Content="OK" MinWidth="75" Click="btnOK_Click"/>
+                        <Button x:Name="btnCancel" Content="Cancel" MinWidth="75" Margin="10,0,0,0" Click="btnCancel_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Popup>
+
+        <Popup x:Name="popupETD" PlacementTarget="{Binding ElementName=btnETD}" AllowsTransparency="True" PopupAnimation="Slide" IsOpen="False"
+               StaysOpen="False">
+            <Border BorderBrush="Gray" BorderThickness="1,1,1,1" Background="White">
+                <Grid Margin="5,5,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="lvETD" Width="200" Height="200">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="10,5,0,0">
+                                    <CheckBox IsChecked="{Binding IsSelected}" Checked="chbETDIsSelected_Checked" Unchecked="chbETDIsSelected_Checked" Content="{Binding Content}" IsThreeState="{Binding IsRoot}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                        <Button x:Name="btnETDOK" Content="OK" MinWidth="75" Click="btnETDOK_Click"/>
+                        <Button x:Name="btnETDCancel" Content="Cancel" MinWidth="75" Margin="10,0,0,0" Click="btnETDCancel_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Popup>
+
+        <Grid Margin="5,5,5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Outsole Line:" VerticalAlignment="Bottom"/>
+            <TextBlock Grid.Row="1" Margin="0,5,0,0" Text="ETD:" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="lblLine" Grid.Column="1" Margin="5,0,0,0" MinWidth="200" BorderBrush="Gray" Text="" ToolTip="All" IsReadOnly="True"/>
+            <TextBox x:Name="lblETD" Grid.Column="1" Grid.Row="1" Margin="5,5,0,0" MinWidth="200" BorderBrush="Gray" Text="" ToolTip="All" IsReadOnly="True"/>
+            <Button x:Name="btnLine" Grid.Column="2" Width="20" Content="*" Click="btnLine_Click" />
+            <Button x:Name="btnETD" Grid.Column="2" Grid.Row="1" Margin="0,5,0,0" Width="20" Content="*" Click="btnETD_Click" />
+            <Button x:Name="btnFilter" Grid.Column="3" Grid.RowSpan="2" Margin="5,0,0,0" Content="Filter" HorizontalAlignment="Left" MinWidth="100" Click="btnFilter_Click"/>
+            <Button x:Name="btnReport" Grid.Column="4" Grid.RowSpan="2" Content="Report" MinWidth="100" Click="btnReport_Click" />
+        </Grid>
+        <DataGrid x:Name="dgMaster" Grid.Row="1" Margin="0,5,0,0" AutoGenerateColumns="False" 
+                  CanUserAddRows="False" CanUserResizeRows="False" AlternationCount="2" 
+                  AlternatingRowBackground="LightCyan"
+                  CanUserReorderColumns="False" SelectionUnit="FullRow"                  
+                  HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" >
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="miRemove" Header="Remove" Click="miRemove_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sequence" Binding="{Binding Sequence}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="PROD.&#10;NO." Binding="{Binding ProductNo}"/>
+                <DataGridTextColumn Header="COUNTRY" Binding="{Binding Country}"/>
+                <DataGridTextColumn Header="STYLE" Binding="{Binding ShoeName}"/>
+                <DataGridTextColumn Header="ART.&#10;NO." Binding="{Binding ArticleNo}"/>
+                <DataGridTextColumn Header="OS.&#10;CODE." Binding="{Binding OutsoleCode}"/>
+                <DataGridTextColumn Header="QUANTITY" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="EFD" Binding="{Binding ETD, StringFormat = 'dd-MMM'}"/>
+                <DataGridTextColumn Header="Memo No." Binding="{Binding MemoId}"/>
+                <DataGridTextColumn Header="OUTSOLE&#10;LINE" Binding="{Binding OutsoleLine}"/>
+                <DataGridTextColumn Header="Sewing&#10;Start&#10;Date" Binding="{Binding SewingStartDate, StringFormat = 'M/d'}"/>
+                <DataGridTextColumn Header="Sewing&#10;Finish&#10;Date" Binding="{Binding SewingFinishDate, StringFormat = 'M/d'}"/>
+                <DataGridTextColumn Header="OS&#10;Mat's&#10;Arrival" Binding="{Binding OutsoleMatsArrival}"/>
+                <DataGridTextColumn Header="WH&#10;Outsole&#10;Balance" Binding="{Binding OutsoleWHBalance}"/>
+                <DataGridTextColumn Header="OS&#10;Start&#10;Date" Binding="{Binding OutsoleStartDate, StringFormat = 'M/d'}"/>
+                <DataGridTextColumn Header="OS&#10;Finish&#10;Date" Binding="{Binding OutsoleFinishDate, StringFormat = 'M/d'}"/>
+                <DataGridTextColumn Header="Sewing&#10;Quota" Binding="{Binding SewingQuota}"/>
+                <DataGridTextColumn Header="Outsole&#10;Quota" Binding="{Binding OutsoleQuota}"/>
+                <DataGridTextColumn Header="Sewing&#10;Balance" Binding="{Binding SewingBalance}"/>
+                <DataGridTextColumn Header="Outsole&#10;Balance" Binding="{Binding OutsoleBalance}"/>
+                <DataGridTextColumn  Binding="{Binding ReleasedQuantity}" Header="Released&#10;Quantity" IsReadOnly="True" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

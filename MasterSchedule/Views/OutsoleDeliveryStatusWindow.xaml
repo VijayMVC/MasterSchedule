@@ -1,0 +1,68 @@
+﻿<Window x:Class="MasterSchedule.Views.OutsoleDeliveryStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Master Schedule - Outsole Delivery Status" Height="300" Width="Auto" WindowState="Maximized" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5,5,5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <CheckBox x:Name="chboETD" Content="EFD:" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpETDStart" Grid.Column="1" Margin="5,0,0,0" SelectedDate="1/1/2000" IsEnabled="{Binding ElementName=chboETD, Path=IsChecked}"/>
+            <TextBlock Grid.Column="2" Margin="5,0,0,0" Text="->" TextAlignment="Center" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpETDEnd" Grid.Column="3" Margin="5,0,0,0" SelectedDate="1/1/2000" IsEnabled="{Binding ElementName=chboETD, Path=IsChecked}"/>
+
+            <CheckBox x:Name="chboSupplierETD" Grid.Row="2" Content="Supplier EFD:" Margin="0,5,0,0" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpSupplierETDStart" Grid.Column="1" Grid.Row="2" Margin="5,5,0,0" SelectedDate="1/1/2000" IsEnabled="{Binding ElementName=chboSupplierETD, Path=IsChecked}"/>
+            <TextBlock Grid.Column="2" Grid.Row="2" Margin="5,5,0,0" Text="->" TextAlignment="Center" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpSupplierETDEnd" Grid.Column="3" Grid.Row="2" Margin="5,5,0,0" SelectedDate="1/1/2000" IsEnabled="{Binding ElementName=chboSupplierETD, Path=IsChecked}"/>
+
+            <TextBlock Grid.Row="1" Margin="0,5,0,0" Text="Outsole Code:" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtArticleStyle" Grid.Column="1" Grid.Row="1" MinWidth="175" Margin="5,5,0,0"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Margin="5,5,0,0" Text="Supplier:" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtSupplier" Grid.Column="3" Grid.Row="1" MinWidth="175" Margin="5,5,0,0"/>
+
+            <TextBlock Grid.Row="3" Text="Is Finished?" Margin="0,5,0,0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="chboFinished"  Grid.Column="1" Grid.Row="3" Margin="5,5,0,0" Content="Finished"/>
+            <CheckBox x:Name="chboUnfinished" Grid.Column="3" Grid.Row="3" Margin="5,5,0,0" Content="Unfinished"/>
+            
+            <Button x:Name="btnView" Grid.Column="4" Grid.Row="0" Grid.RowSpan="4" MinWidth="50" Margin="10,0,0,0" Content="View" IsEnabled="False" Click="btnView_Click" IsDefault="True"/>
+        </Grid>
+        <DataGrid x:Name="dgMain" Grid.Row="1" AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  AlternationCount="2"
+                  AlternatingRowBackground="LightCyan"
+                  HorizontalGridLinesBrush="LightGray" 
+                  VerticalGridLinesBrush="LightGray"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ProductNo}" Header="Product No."/>
+                <DataGridTextColumn Binding="{Binding Country}" Header="Country"/>
+                <DataGridTextColumn Binding="{Binding OutsoleCode}" Header="Outsole Code"/>
+                <DataGridTextColumn Binding="{Binding ArticleNo}" Header="Article No."/>
+                <DataGridTextColumn Binding="{Binding ShoeName}" Header="Style"/>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity"/>
+                <DataGridTextColumn Binding="{Binding ETD, StringFormat=dd-MMM}" Header="EFD"/>
+                <DataGridTextColumn Binding="{Binding Supplier}" Header="Supplier"/>
+                <DataGridTextColumn Binding="{Binding SupplierETD, StringFormat=dd-MMM}" Header="Supplier EFD"/>
+                <DataGridTextColumn Binding="{Binding ActualQuantity}" Header="Qty Received"/>
+                <DataGridTextColumn Binding="{Binding Actual}" Header="Act Date"/>
+                <DataGridTextColumn Binding="{Binding SewingStartDate, StringFormat=MM/dd}" Header="Sewing Start"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

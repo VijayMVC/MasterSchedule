@@ -1,0 +1,248 @@
+﻿<Window xmlns:my="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit" x:Class="MasterSchedule.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Master Schedule" Height="350" Width="525" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Background="DarkGray">
+            <MenuItem Header="File">
+                <MenuItem x:Name="miImport" Header="Import" IsEnabled="False">
+                    <MenuItem x:Name="miImportOrders" Header="Orders List" Click="miImportOrders_Click"/>
+                    <MenuItem x:Name="miInportSizeRun" Header="Size Run" Click="miInportSizeRun_Click"/>
+                    <MenuItem x:Name="miImportOutsoleRawMaterial" Header="Outsole Raw Material" Click="miImportOutsoleRawMaterial_Click"/>
+                    <MenuItem x:Name="miImportUpperComponent" Header="Upper Component" Click="miImportUpperComponent_Click"/>
+                    <MenuItem x:Name="miImportInsockRawMaterial" Header="Insock Raw Material" Click="miImportInsockRawMaterial_Click"/>
+                    <MenuItem x:Name="miImportMachineRequirement" Header="Machine Requirement" Click="miImportMachineRequirement_Click"/>
+                    <MenuItem x:Name="miImportAvailableMachine" Header="Available Machine" Click="miImportAvailableMachine_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="miExit" Header="Logout" Click="miExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Management">
+                <MenuItem x:Name="miRawMaterial" Header="WH Master File" Click="miRawMaterial_Click" IsEnabled="False"/>
+                <MenuItem Header="Schedule">
+                    <MenuItem x:Name="miSewingMaster" Header="Sewing - CutPrep" Click="miSewingMaster_Click" IsEnabled="False"/>
+                    <MenuItem x:Name="miOutsoleMaster" Header="Outsole" Click="miOutsoleMaster_Click" IsEnabled="False"/>
+                    <MenuItem x:Name="miSockliningMaster" Header="Socklining" Click="miSockliningMaster_Click" IsEnabled="False"/>
+                    <MenuItem x:Name="miAssemblyMaster" Header="Assembly" Click="miAssemblyMaster_Click" IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem x:Name="miOutsoleReleaseMaterial" Header="Release to Stockfit" IsEnabled="False">
+                    <MenuItem Header="New Release" Click="miOutsoleReleaseMaterial_Click"/>
+                    <MenuItem Header="Revise Release" Click="miUpdateOutsoleReleaseMaterial_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="miAssemblyRelease" Header="Release to Assembly" IsEnabled="False">
+                    <MenuItem Header="New Release" Click="miAssemblyRelease_Click"/>
+                    <MenuItem Header="Revise Release" Click="miUpdateAssemblyRelease_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="miRevise" Header="Revise" IsEnabled="False">
+                    <MenuItem x:Name="miUpdateOrders" Header="Orders" Click="miUpdateOrders_Click"/>
+                    <MenuItem x:Name="miUpdateMachineRequirement" Header="Machine Requirement" Click="miUpdateMachineRequirement_Click"/>
+                    <MenuItem x:Name="miUpdateAvailableMachine" Header="Available Machine" Click="miUpdateAvailableMachine_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="miOffDay" Header="Off Days" Click="miOffDay_Click" IsEnabled="False"/>
+                <MenuItem x:Name="miProductionMemo" Header="Production Memo">
+                    <MenuItem x:Name="miInsertMemo" Header="Insert New Memo" Click="miInsertMemo_Click" IsEnabled="False"/>
+                    <MenuItem x:Name="miSearchMemo" Header="Search Memo" Click="miSearchMemo_Click" IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem x:Name="miOutsoleWH" IsEnabled="False" Header="Outsole WH">
+                    <MenuItem x:Name="miInputOutsoleMaterialDetail" Header="Input Outsole Material Detail" Click="miInputOutsoleMaterialDetail_Click"/>
+                    <MenuItem IsEnabled="False" x:Name="miInputOutsoleWHFG" Header="Input Outsole WH F.G" Click="miInputOutsoleWHFG_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Report">
+                <MenuItem Header="List of Delay">
+                    <MenuItem x:Name="miDelayReport" Header="Upper" Click="miDelayReport_Click"/>
+                    <MenuItem x:Name="miOutsoleDelayReport"  Header="Outsole" Click="miOutsoleDelayReport_Click"/>
+                </MenuItem>
+                <MenuItem Header="List of Delivery">
+                    <MenuItem x:Name="miDeliveryReport" Header="Upper" Click="miDeliveryReport_Click"/>
+                    <MenuItem x:Name="miOutsoleDeliveryReport"  Header="Outsole" Click="miOutsoleDeliveryReport_Click"/>
+                </MenuItem>
+                <MenuItem Header="Outsole">
+                    <MenuItem x:Name="miOutsoleWHInventory"  Header="Outsole WH Inventory" Click="miOutsoleWHInventory_Click"/>
+                    <MenuItem x:Name="miOutsoleWHDelivery" Header="Outsole WH Delivery" Click="miOutsoleWHDelivery_Click"/>
+                    <MenuItem x:Name="miOutsoleDeliveryVariance" Header="Outsole WH Delivery Variance" Click="miOutsoleDeliveryVariance_Click"/>
+                    <MenuItem x:Name="miOutsoleAccumulating" Header="Outsole WH Accumulating" Click="miOutsoleAccumulating_Click"/>
+                    <MenuItem x:Name="miOutsoleMaterialReject"  Header="Outsole Material Reject" Click="miOutsoleMaterialReject_Click"/>
+                    <MenuItem x:Name="miOutsoleOutputBalance" Header="Outsole Output Balance" Click="miOutsoleOutputBalance_Click"/>
+                </MenuItem>
+                <MenuItem Header="Upper">
+                    <MenuItem x:Name="miUpperComponentInventory" Header="Upper Component WH Inventory" Click="miUpperComponentInventory_Click"/>
+                    <MenuItem x:Name="miUpperComponentDelivery" Header="Upper Component WH Delivery" Click="miUpperComponentDelivery_Click"/>
+                    <MenuItem x:Name="miUpperWHInventory"  Header="Upper WH Inventory" Click="miUpperWHInventory_Click"/>
+                </MenuItem>
+                <MenuItem Header="Insock">
+                    <!--<MenuItem x:Name="miInsockInventory" Header="Insock Inventory" Click="miInsockInventory_Click"/>-->
+                    <MenuItem x:Name="miInsockDelivery" Header="Insock Delivery" Click="miInsockDelivery_Click"/>
+                </MenuItem>
+                <MenuItem Header="Schedule Delay">
+                    <MenuItem x:Name="miScheduleDelaySewing" Header="Sewing" Click="miScheduleDelaySewing_Click"/>
+                    <MenuItem x:Name="miScheduleDelayAssembly"  Header="Assembly" Click="miScheduleDelayAssembly_Click"/>
+                </MenuItem>
+                <MenuItem Header="Print">
+                    <MenuItem x:Name="miSewingMasterReport" Header="Sewing" Click="miSewingMasterReport_Click"/>
+                    <MenuItem x:Name="miCutprepMasterReport" Header="Cutprep" Click="miCutprepMasterReport_Click"/>
+                    <MenuItem x:Name="miSockliningMasterReport" Header="Sock-lining" Click="miSockliningMasterReport_Click"/>
+                    <MenuItem x:Name="miOutsoleMasterReport" Header="Outsole" Click="miOutsoleMasterReport_Click"/>
+                    <MenuItem x:Name="miAssemblyMasterReport" Header="Assembly" Click="miAssemblyMasterReport_Click"/>
+                </MenuItem>
+                <MenuItem Header="Production Status">
+                    <MenuItem x:Name="miOutsoleDeliveryStatus"  Header="O/S Delivery Status" Click="miOutsoleDeliveryStatus_Click"/>
+                    <MenuItem x:Name="miDeliveryStatus" Header="Upper Delivery Status" Click="miDeliveryStatus_Click"/>
+                    <MenuItem x:Name="miCompletionStatus" Header="PO Completion Status" Click="miCompletionStatus_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="miChartSchedule" Header="Schedule Chart" Click="miChartSchedule_Click"/>
+                <MenuItem x:Name="miMachineRequirementScheduleChart" Header="Machine Requirement Schedule Chart" Click="miMachineRequirementScheduleChart_Click"/>
+            </MenuItem>
+            <MenuItem Header="Statistics">
+                <MenuItem Header="Lead Time" IsEnabled="False">
+                    <MenuItem x:Name="miPerSection" Header="Per Section" Click="miPerSection_Click"/>
+                    <MenuItem Header="Cut-To-Box">
+                        <MenuItem x:Name="miCutA" Header="Cut A" Click="miCutA_Click"/>
+                        <MenuItem x:Name="miCutB" Header="Cut B" Click="miCutB_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Per Style">
+                        <MenuItem x:Name="miPerPatternNo" Header="PM" Click="miPerPatternNo_Click"/>
+                        <MenuItem x:Name="miPerArticleNo" Header="Article No" Click="miPerArticleNo_Click"/>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem x:Name="miAbout" Header="About me" Click="miAbout_Click"/>
+                <MenuItem x:Name="miLog" Header="Update History" Click="miLog_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="txtPopupPosition1"  Margin="2,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtPopupPosition2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtPopupPosition3"  Margin="2,0,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtPopupPosition4" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Popup x:Name="popupOSWHDeliveryEarly" PlacementTarget="{Binding ElementName= txtPopupPosition1}" PopupAnimation="Scroll" Height="300" AllowsTransparency="True">
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="2,2,0,0" Background="Yellow">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="PO BELOW WERE DELIVERED EARLY" FontWeight="Bold" Margin="5,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" x:Name="btnClosePopupOSWHDeliveryBefore" Content="X" FontWeight="Bold" Width="20" Foreground="Red" HorizontalAlignment="Right" Click="btnClosePopupOSWHDeliveryBefore_Click"/>
+                            </Grid>
+                            <DataGrid x:Name="dgDeliveryEarly" Margin="0,5,0,0" Grid.Row="1" RowHeaderWidth="2" AutoGenerateColumns="False" CanUserAddRows="False" AlternationCount="2" AlternatingRowBackground="LightCyan" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Style}" Header="Style"/>
+                                <DataGridTextColumn Binding="{Binding ProductNo}" Header="PO#"/>
+                                <DataGridTextColumn Binding="{Binding QuantityDelivery}" Header="Qty&#10;Delivered"/>
+                                <DataGridTextColumn Binding="{Binding DeliveryEFDDate, StringFormat = MM/dd}" Header="Delivery&#10;EFD" />
+                                <DataGridTextColumn Binding="{Binding SewingStartDate, StringFormat = MM/dd}" Header="Sewing&#10;Start Date"/>
+                                <DataGridTextColumn Binding="{Binding Supplier}" Header="Supplier"/>
+                                <DataGridTextColumn Binding="{Binding OutsoleCode}" Header="OS Code"/>
+                            </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                </Border>
+            </Popup>
+            <Popup x:Name="popupOSWHNotDelivery" PlacementTarget="{Binding ElementName= txtPopupPosition3}" PopupAnimation="Fade" AllowsTransparency="True" Height="300">
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="2,2,0,0" Background="Red">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="PO BELOW NOT YET COMPLETE DELIVERY" FontWeight="Bold" Margin="5,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" x:Name="btnClosePopupOSWHNotDelivery" Content="X" FontWeight="Bold" Width="20" Foreground="Red" HorizontalAlignment="Right" Click="btnClosePopupOSWHNotDelivery_Click"/>
+                        </Grid>
+                        <DataGrid x:Name="dgNotYetDelivery" Grid.Row="1" Margin="0,5,0,0" RowHeaderWidth="2" AutoGenerateColumns="False" CanUserAddRows="False" AlternationCount="2" AlternatingRowBackground="LightCyan" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Style}" Header="Style"/>
+                                <DataGridTextColumn Binding="{Binding ProductNo}" Header="PO#"/>
+                                <DataGridTextColumn Binding="{Binding QuantityNotDelivery}" Header="Qty Not Yet&#10;Delivery"/>
+                                <DataGridTextColumn Binding="{Binding DeliveryEFDDate, StringFormat = MM/dd}" Header="Delivery&#10;EFD"/>
+                                <DataGridTextColumn Binding="{Binding OrderCSD, StringFormat = MM/dd}" Header="CSD"/>
+                                <DataGridTextColumn Binding="{Binding Supplier}" Header="Supplier"/>
+                                <DataGridTextColumn Binding="{Binding OutsoleCode}" Header="OS Code"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Popup>
+            <Popup x:Name="popupOSWHReject" PlacementTarget="{Binding ElementName= txtPopupPosition2}" PopupAnimation="Fade" AllowsTransparency="True" Height="300">
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="2,2,0,0" Background="Red">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="NEED FOLLOW-UP REJECT" FontWeight="Bold" Margin="5,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" x:Name="btnClosePopupOSReject" Content="X" FontWeight="Bold" Width="20" Foreground="Red" HorizontalAlignment="Right" Click="btnClosePopupOSReject_Click"/>
+                        </Grid>
+                        <DataGrid x:Name="dgReject" Grid.Row="1" Margin="0,5,0,0" RowHeaderWidth="2" AutoGenerateColumns="False" CanUserAddRows="False" AlternationCount="2" AlternatingRowBackground="LightCyan" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Style}" Header="Style"/>
+                                <DataGridTextColumn Binding="{Binding ProductNo}" Header="PO#"/>
+                                <DataGridTextColumn Binding="{Binding QuantityReject}" Header="Reject&#10;Quantity"/>
+                                <DataGridTextColumn Binding="{Binding DeliveryEFDDate, StringFormat = MM/dd}" Header="Delivery&#10;EFD"/>
+                                <DataGridTextColumn Binding="{Binding OrderEFD, StringFormat = MM/dd}" Header="EFD"/>
+                                <DataGridTextColumn Binding="{Binding Supplier}" Header="Supplier"/>
+                                <DataGridTextColumn Binding="{Binding OutsoleCode}" Header="OS Code"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Popup>
+            <Popup x:Name="popupDelayShipment" PlacementTarget="{Binding ElementName= txtPopupPosition4}" PopupAnimation="Fade" AllowsTransparency="True" Height="300">
+                <Border BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="2,2,0,0" Background="Red">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="DELAY SHIPMENT" FontWeight="Bold" Margin="5,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" x:Name="btnClosePopupDelayShipment" Content="X" FontWeight="Bold" Width="20" Foreground="Red" HorizontalAlignment="Right" Click="btnClosePopupDelayShipment_Click"/>
+                        </Grid>
+                        <DataGrid x:Name="dgDelayShipment" Grid.Row="1" Margin="0,5,0,0" RowHeaderWidth="2" AutoGenerateColumns="False" CanUserAddRows="False" AlternationCount="2" AlternatingRowBackground="LightCyan" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Style}" Header="Style"/>
+                                <DataGridTextColumn Binding="{Binding ProductNo}" Header="PO#"/>
+                                <DataGridTextColumn Binding="{Binding AssemblyBalance}" Header="Assembly&#10;Balance"/>
+                                <DataGridTextColumn Binding="{Binding SewingBalance}" Header="Sewing&#10;Balance"/>
+                                <DataGridTextColumn Binding="{Binding OutsoleBalance}" Header="Stockfit&#10;Balance"/>
+                                <DataGridTextColumn MinWidth="80" Binding="{Binding OrderCSD, StringFormat = MM/dd}" Header="CSD"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Popup>
+        </Grid>
+    </Grid>
+    
+</Window>

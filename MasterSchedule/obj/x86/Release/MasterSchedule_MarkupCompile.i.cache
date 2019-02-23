@@ -1,0 +1,20 @@
+﻿MasterSchedule
+
+
+winexe
+C#
+.cs
+D:\Saoviet\Projects\Saoviet Master Schedule Solution\MasterSchedule\obj\x86\Release\
+MasterSchedule
+none
+false
+TRACE
+
+53-527831560
+
+141-1749986561
+25-1451362406
+App.xaml;MainWindow.xaml;Views\AssemblyMasterWindow.xaml;Views\AssemblyMasterFilterWindow.xaml;Views\AssemblyMasterReportWindow.xaml;Views\AssemblyReleaseWindow.xaml;Views\AssemblyReleaseReportWindow.xaml;Views\AssemblyScheduleDelayReportWindow.xaml;Views\ChartScheduleWindow.xaml;Views\CompletionStatusWindow.xaml;Views\SearchProductionMemoWindow.xaml;Views\OutsoleDeliveryStatusWindow.xaml;Views\DeliveryStatusWindow.xaml;Views\ProductionMemoWindow.xaml;Views\SewingScheduleDelayReportWindow.xaml;Views\UpperWHInventoryDetailWindow.xaml;Views\UpperWHInventoryWindow.xaml;Views\SelectAssemblyReleaseWindow.xaml;Views\UpdateAssemblyReleaseWindow.xaml;Views\SockliningMasterReportWindow.xaml;Views\SockliningMasterFilterWindow.xaml;Views\OutsoleMasterReportWindow.xaml;Views\OutsoleMasterFilterWindow.xaml;Views\CutprepMasterReportWindow.xaml;Views\CutprepMasterFilterWindow.xaml;Views\SewingMasterReportWindow.xaml;Views\SewingMasterFilterWindow.xaml;Views\SockliningMasterWindow.xaml;Views\OutsoleInputOutputWindow.xaml;Views\OutsoleMasterWindow.xaml;Views\OutsoleMaterialRejectReportWindow.xaml;Views\SewingInputOutputWindow.xaml;Views\InsertOffDayWindow.xaml;Views\SelectOutsoleReleaseMaterialWindow.xaml;Views\SewingMasterWindow.xaml;Views\UpdateOutsoleReleaseMaterialWindow.xaml;Views\OutsoleWHInventoryDetailWindow.xaml;Views\ImportOutsoleRawMaterialWindow.xaml;Views\LoginWindow.xaml;Views\OutsoleDeliveryReportWindow.xaml;Views\OutsoleDelayReportWindow.xaml;Views\DeliveryReportWindow.xaml;Views\DelayReportWindow.xaml;Views\ImportOrdersWindow.xaml;Views\ImportSizeRunWindow.xaml;Views\OutsoleInputMaterialWindow.xaml;Views\OutsoleReleaseMaterialReportWindow.xaml;Views\OutsoleWHInventoryWindow.xaml;Views\RawMaterialSearchBoxWindow.xaml;Views\RawMaterialWindow.xaml;Views\OutsoleRawMaterialWindow.xaml;Views\OutsoleReleaseMaterialWindow.xaml;Views\UpdateOrdersWindow.xaml;
+
+True
+

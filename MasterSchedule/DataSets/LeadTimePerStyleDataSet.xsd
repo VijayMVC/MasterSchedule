@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LeadTimePerStyleDataSet" targetNamespace="http://tempuri.org/LeadTimePerStyleDataSet.xsd" xmlns:mstns="http://tempuri.org/LeadTimePerStyleDataSet.xsd" xmlns="http://tempuri.org/LeadTimePerStyleDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LeadTimePerStyleDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LeadTimePerStyleDataSet" msprop:Generator_UserDSName="LeadTimePerStyleDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LeadTimePerStyleTable" msprop:Generator_TableClassName="LeadTimePerStyleTableDataTable" msprop:Generator_TableVarName="tableLeadTimePerStyleTable" msprop:Generator_TablePropName="LeadTimePerStyleTable" msprop:Generator_RowDeletingName="LeadTimePerStyleTableRowDeleting" msprop:Generator_RowChangingName="LeadTimePerStyleTableRowChanging" msprop:Generator_RowEvHandlerName="LeadTimePerStyleTableRowChangeEventHandler" msprop:Generator_RowDeletedName="LeadTimePerStyleTableRowDeleted" msprop:Generator_UserTableName="LeadTimePerStyleTable" msprop:Generator_RowChangedName="LeadTimePerStyleTableRowChanged" msprop:Generator_RowEvArgName="LeadTimePerStyleTableRowChangeEvent" msprop:Generator_RowClassName="LeadTimePerStyleTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Phase" msprop:Generator_ColumnVarNameInTable="columnPhase" msprop:Generator_ColumnPropNameInRow="Phase" msprop:Generator_ColumnPropNameInTable="PhaseColumn" msprop:Generator_UserColumnName="Phase" type="xs:string" minOccurs="0" />
+              <xs:element name="TimeAverage" msprop:Generator_ColumnVarNameInTable="columnTimeAverage" msprop:Generator_ColumnPropNameInRow="TimeAverage" msprop:Generator_ColumnPropNameInTable="TimeAverageColumn" msprop:Generator_UserColumnName="TimeAverage" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
